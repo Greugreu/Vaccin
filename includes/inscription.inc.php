@@ -1,5 +1,5 @@
 <?php
-namespace\PdoDB\PdoDB::class;
+use PdoDB\PdoDb;
 
 if (isset($_POST['inscription'])) {
     $mail = isset($_POST['mail']) ? $_POST['mail'] : "";
@@ -9,7 +9,19 @@ if (isset($_POST['inscription'])) {
     $error = array();
 
     if ($mdp === $confirm_mdp) {
-        $sql = "SELECT COUNT("
+        $attempt = new PdoDB;
+        $attempt->check($mail);
+        if ($attempt == 0) {
+            $insert = $mail;
+            $mdp = password_hash($mdp, PASSWORD_DEFAULT);
+            $insert.= $mdp;
+            $attempt->insert($insert);
+
+            echo 'Inscription OK';
+        } else {
+            echo "C'est pété !";
+        }
+
 
     } else {
            array_push($error, "Les mots de passes ne correspondent pas.");
@@ -33,5 +45,3 @@ if (isset($_POST['inscription'])) {
 } else {
     include_once "inscription.php";
 };
-
-$r = new PDO('', '', '', '');

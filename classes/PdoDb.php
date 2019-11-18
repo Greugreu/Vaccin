@@ -2,7 +2,7 @@
 
 namespace PdoDB;
 
-class PdoDB extends \PDO
+class PdoDb extends \PDO
 {
     private $db = 'vaccin';
     private $host = 'localhost';
@@ -12,7 +12,7 @@ class PdoDB extends \PDO
     private $select;
     private $execute;
 
-    private function __construct()
+    public function __construct()
     {
         try
         {
