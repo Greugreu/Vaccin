@@ -1,14 +1,3 @@
-<!--<script>
-    function validate(){
-
-        if(!document.getElementById("mdp").value==document.getElementById("confirm_mdp").value)alert("Passwords " +
-            "do no match");
-        return document.getElementById("mdp").value==document.getElementById("confirm_mdp").value;
-        return false;
-    }
-
-</script>
--->
 <form method="post" action="index.php?page=inscription">
     <div>
         <label for="mail"></label>
