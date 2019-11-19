@@ -1,4 +1,5 @@
 <?php
+
 use classes\PdoDb;
 
 if (isset($_POST['inscription'])) {
@@ -8,37 +9,44 @@ if (isset($_POST['inscription'])) {
 
     $error = array();
 
-    if ($mdp === $confirm_mdp) {
-        $attempt = new PdoDB;
-        $attempt->check($mail);
-        if ($attempt->resultat == 0) {
-            $mdp = password_hash($mdp, PASSWORD_DEFAULT);
-            $attempt->insert($mail, $mdp);
+    strip_tags($mail, $mdp);
+    strip_tags($confirm_mdp);
+    filter_var($mail, FILTER_VALIDATE_EMAIL);
+    if (strlen($mail) > 50) {
+        array_push($error, 'Votre adresse fait plus de 50 charactères.');
+    }
 
-            echo 'Inscription OK';
-        } else {
-            echo "<h1>Déjà dans la DB</h1>";
-        }
-
-
-    } else {
-           array_push($error, "Les mots de passes ne correspondent pas.");
+    if (count($error) > 0) {
+        $message = "<ul>";
+        $i = 0;
+        while ($i < count($error)) {
+            $message .= "<li>" . $error[$i] . "</li>";
+            $i++;
         };
-
-        if (count($error) > 0) {
-            $message = "<ul>";
-            $i=0;
-            while ($i < count($error)) {
-                $message .= "<li>" . $error[$i] . "</li>";
-                $i++;
-            };
 
         $message .= "</ul>";
 
         echo $message;
 
         include "inscription.php";
-    };
+
+    } else {
+        if ($mdp === $confirm_mdp) {
+            $attempt = new PdoDB;
+            $attempt->check($mail);
+            if ($attempt->resultat == 0) {
+                $mdp = password_hash($mdp, PASSWORD_DEFAULT);
+                $attempt->insert($mail, $mdp);
+
+                echo 'Inscription OK';
+            } else {
+                echo "<p>Un compte avec cette adresse existe déjà.</p>";
+            }
+
+        } else {
+            array_push($error, "Les mots de passes ne correspondent pas.");
+        };
+    }
 
 } else {
     include_once "inscription.php";
