@@ -11,6 +11,7 @@ class PdoDb extends PDO
     private $user = 'root';
     private $pwd = '';
     private $con; //
+    public $resultat;
     private $select;
     private $execute;
 
@@ -73,8 +74,7 @@ class PdoDb extends PDO
         $reqCheck = "SELECT COUNT(*) FROM vaccin.user WHERE usermail='" . $mail . "'";
         $result = parent::prepare($reqCheck);
         $result->execute();
-        $resultat = $result->fetchColumn();
-        return $resultat;
+        $this->resultat = $result->fetchColumn();
     }
 
     public function insert($mail, $mdp)

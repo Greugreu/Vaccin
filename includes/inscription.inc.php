@@ -10,13 +10,14 @@ if (isset($_POST['inscription'])) {
 
     if ($mdp === $confirm_mdp) {
         $attempt = new PdoDB;
-        if ($attempt->check($mail)->Object->result == 0) {
+        $attempt->check($mail);
+        if ($attempt->resultat == 0) {
             $mdp = password_hash($mdp, PASSWORD_DEFAULT);
             $attempt->insert($mail, $mdp);
 
             echo 'Inscription OK';
         } else {
-            echo "<h1>C'est pété !</h1>";
+            echo "<h1>Déjà dans la DB</h1>";
         }
 
 
