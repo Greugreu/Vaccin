@@ -2,11 +2,12 @@
 session_start();
 
 date_default_timezone_set('Europe/Paris');
-include_once "./functions/debug.php";
-include_once "./includes/pdo.php";
-include_once "./functions/displayTitle.php";
-include_once "./includes/html.php";
-include_once "./includes/header.php";
+include_once "functions/auto_loader.php";
+include_once "functions/debug.php";
+include_once "includes/pdo.php";
+include_once "functions/displayTitle.php";
+include_once "includes/html.php";
+include_once "includes/header.php";
 
 if (!empty($_GET['page'])) {
     $page = $_GET['page'];

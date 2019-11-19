@@ -1,8 +1,10 @@
 <?php
 
-namespace PdoDB;
+namespace classes;
 
-class PdoDb extends \PDO
+use PDO;
+
+class PdoDb extends PDO
 {
     private $db = 'vaccin';
     private $host = 'localhost';
@@ -20,7 +22,7 @@ class PdoDb extends \PDO
             // pour mysql on active le cache de requête
             if($this->getAttribute(PDO::ATTR_DRIVER_NAME) == 'mysql')
                 $this->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
-            return $this->connec;
+            return $this->con;
         }
         catch(PDOException $e) {
             //On indique par email qu'on n'a plus de connection disponible

@@ -1,5 +1,5 @@
 <?php
-use PdoDB\PdoDb;
+use classes\PdoDb;
 
 if (isset($_POST['inscription'])) {
     $mail = isset($_POST['mail']) ? $_POST['mail'] : "";
