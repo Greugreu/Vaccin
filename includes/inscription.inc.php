@@ -38,7 +38,7 @@ if (isset($_POST['inscription'])) {
                 $mdp = password_hash($mdp, PASSWORD_DEFAULT);
                 $attempt->insert($mail, $mdp);
 
-                echo 'Inscription OK';
+                echo '<p>Inscription OK</p>';
             } else {
                 echo "<p>Un compte avec cette adresse existe déjà.</p>";
             }
