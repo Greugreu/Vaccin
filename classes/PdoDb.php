@@ -25,7 +25,6 @@ class PdoDb extends PDO
             return $this->con;
         }
         catch(PDOException $e) {
-            //On indique par email qu'on n'a plus de connection disponible
             error_log(date('D/m/y').' à '.date("H:i:s").' : '.$e->getMessage(), 1, $this->email);
             $message= new Message();
             $message->outPut('Erreur 500', 'Serveur de BDD indisponible, nous nous excusons de la gêne occasionnée');
@@ -69,7 +68,7 @@ class PdoDb extends PDO
         return 'mysql:dbname='.$this->db.';host='.$this->host;
     }
 
-    public function check($reqCheck)
+    public function check($mail)
     {
         $reqCheck = "SELECT COUNT(*) FROM vaccin.user WHERE usermail='" . $mail . "'";
         $result = parent::prepare($reqCheck);
@@ -78,7 +77,7 @@ class PdoDb extends PDO
         return $resultat;
     }
 
-    public function insert($reqInsert)
+    public function insert($mail, $mdp)
     {
         $reqInsert = "INSERT INTO vaccin.user
                     (usermail, userpass) 
