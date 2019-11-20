@@ -40,6 +40,6 @@ if (isset($_POST['infos'])) {
 
     } else {
         $insert = new PdoDb();
-        $insert->insert()
+        $insert->updateInfo($nom, $prenom, $adresse, $naissance, $medecin);
     }
 }

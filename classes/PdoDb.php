@@ -86,9 +86,13 @@ class PdoDb extends PDO
         $result->execute();
     }
 
-    public function insertInfo($nom, $prenom, $adresse, $naissance, $medecin)
+    public function updateInfo($mail,$nom, $prenom, $adresse, $naissance, $medecin, $userID)
     {
-        $reqInsert = "INSERT INTO vaccin.user
-                    ()"
+        $mail = "SELECT (*) FROM vaccin.user WJERE "
+        $userID = "SELECT (vaccin.user.id) FROM vaccin.user WHERE usermail='$mail'";
+        $reqInsert = "UPDATE vaccin.user SET usernom='$nom', userprenom='$prenom', useradress='$adresse', usernaissance='$naissance', usermedecin='$medecin'
+                      WHERE id='$userID' LIMIT 1";
+        $result = parent::prepare($reqInsert);
+        $result->execute();
     }
 }

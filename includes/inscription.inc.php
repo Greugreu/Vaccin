@@ -9,9 +9,9 @@ if (isset($_POST['inscription'])) {
 
     $error = array();
 
-    strip_tags($mail, $mdp);
-    strip_tags($confirm_mdp);
-    filter_var($mail, FILTER_VALIDATE_EMAIL);
+    trim(strip_tags($mail, $mdp));
+    trim(strip_tags($confirm_mdp));
+    trim(filter_var($mail, FILTER_VALIDATE_EMAIL));
     if (strlen($mail) > 50) {
         array_push($error, 'Votre adresse fait plus de 50 charactères.');
     }

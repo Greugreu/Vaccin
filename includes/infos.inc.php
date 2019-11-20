@@ -47,6 +47,7 @@
     <input type="text" name="">
     <label for="">&nbsp;:</label>
     <input type="text" name="">
+    <button type="submit">Envoyer</button>
     <input type="hidden" name="infos" id="infos">
 
 </form>
