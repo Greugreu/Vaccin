@@ -85,4 +85,10 @@ class PdoDb extends PDO
         $result = parent::prepare($reqInsert);
         $result->execute();
     }
+
+    public function insertInfo($nom, $prenom, $adresse, $naissance, $medecin)
+    {
+        $reqInsert = "INSERT INTO vaccin.user
+                    ()"
+    }
 }
