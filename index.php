@@ -2,27 +2,16 @@
 session_start();
 
 date_default_timezone_set('Europe/Paris');
+include_once ('classes/PdoDb.php');
+include_once ('functions/functions.php');
 include_once "functions/auto_loader.php";
-include_once "functions/debug.php";
-include_once "includes/pdo.php";
 include_once "functions/displayTitle.php";
-include_once "includes/html.php";
-include_once "includes/header.php";
 
-if (!empty($_GET['page'])) {
-    $page = $_GET['page'];
-}
-else {
-    $page = "accueil";
-}
-$path = "./includes/";
-$contenu = glob($path . "*.inc.php");
-$page = $path . $page . ".inc.php";
+$title = 'Home page';
 
-if (in_array($page, $contenu)) {
-    include_once $page;
-}
-else {
-    include_once "./includes/accueil.inc.php";
-}
-include_once "./includes/footer.php";
+include('includes/header.php');
+?>
+
+    <h1>Home</h1>
+
+<?php include ('includes/footer.php');

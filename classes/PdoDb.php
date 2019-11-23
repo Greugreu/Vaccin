@@ -71,7 +71,7 @@ class PdoDb extends PDO
 
     public function check($mail)
     {
-        $reqCheck = "SELECT COUNT(*) FROM vaccin.user WHERE usermail='" . $mail . "'";
+        $reqCheck = "SELECT COUNT(*) FROM vaccin.user WHERE usermail= $mail ";
         $result = parent::prepare($reqCheck);
         $result->execute();
         $this->resultat = $result->fetchColumn();
@@ -79,10 +79,29 @@ class PdoDb extends PDO
 
     public function insert($mail, $mdp)
     {
-        $reqInsert = "INSERT INTO vaccin.user
-                    (usermail, userpass) 
-                    VALUES ('" . $mail . "', '" . $mdp . "')";
-        $result = parent::prepare($reqInsert);
-        $result->execute();
+        $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp)";
+        $query= $this->prepare($reqInsert);
+        $query->bindValue('mail', $mail, self::PARAM_STR);
+        $query->bindValue('mdp', $mdp);
+        $query->execute();
+    }
+
+    public function updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id)
+    {
+        $reqUpdate = "UPDATE vaccin.userinfo 
+                    SET usernom=:nom, userprenom=:prenom, useradress=:adress, usernaissance=:naissance, usermedecin=:medecin
+                    WHERE id=$id";
+        $query = $this->prepare($reqUpdate);
+        $query->bindValue(':nom', $nom, self::PARAM_STR);
+        $query->bindValue(':prenom', $prenom, self::PARAM_STR);
+        $query->bindValue(':adress', $adresse);
+        $query->bindValue(':naissance', $naissance);
+        $query->bindValue(':medecin', $medecin, self::PARAM_STR);
+        $query->execute();
+
+    }
+
+    public function fetch(){
+        $this->fetch();
     }
 }
