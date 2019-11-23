@@ -24,7 +24,7 @@ function textValid($value, $err, $minl, $maxl, $key, $empty = true)
     }
     return $err;
 }
-function CleanMail($err, $mail, $key)
+function cleanMail($err, $mail, $key)
 {
     if (!empty($mail)) {
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
@@ -78,3 +78,19 @@ function pagination($nbPage)
         echo " <a href=\"index.php?p=$i\">$i</a> /";
     }
 }
+
+function passwordValid($password,$err , $minl , $key)
+{
+    if (!empty($password)) {
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+
+        if(!$lowercase || !$number) {
+            $err[$key] = 'Votre mot de passe doit contenir au moins une lettre et un chiffre';
+        } elseif (mb_strlen($password) < $minl) {
+            $err[$key] = 'Votre mot de passe doit faire un minimum de '.$minl.' caractères';
+        }
+    }
+    return $err;
+};
+

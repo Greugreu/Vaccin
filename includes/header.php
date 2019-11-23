@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title><?php echo displayTitle(); ?></title>
+    <title>Vaccin</title>
     <link href="./assets/css/style.css" rel="stylesheet" />
 </head>
 
@@ -10,10 +10,10 @@
 <header>
     <nav>
         <ul>
-            <li><a href="index.php?page=accueil">Accueil</a></li>
-            <li><a href="index.php?page=produits">Actualités</a></li>
-            <li><a href="index.php?page=inscription">Inscription</a></li>
-            <li><a href="index.php?page=compte">Mon compte</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="inscription.php">Inscription</a></li>
+            <li><a href="index.php?id=<?php echo $user['id'] ?>">Mon compte</a></li>
             <?php
             if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
                 echo "<li><a href=\"index.php?page=logout\">Logout</a></li>";
@@ -22,7 +22,7 @@
                 echo "<li><a href=\"index.php?page=login\">Login</a></li>";
             }
             ?>
-            <li><a href="index.php?page=contact">Contact</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 </header>

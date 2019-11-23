@@ -2,35 +2,23 @@
 
 use classes\PdoDb;
 
-if (isset($_POST['inscription'])) {
-    $mail = isset($_POST['mail']) ? $_POST['mail'] : "";
-    $mdp = isset($_POST['mdp']) ? $_POST['mdp'] : "";
-    $confirm_mdp = isset($_POST['confirm_mdp']) ? $_POST ['confirm_mdp'] : "";
+include 'functions/functions.php';
 
-    $error = array();
+$title = 'Inscription';
 
-    trim(strip_tags($mail, $mdp));
-    trim(strip_tags($confirm_mdp));
-    trim(filter_var($mail, FILTER_VALIDATE_EMAIL));
-    if (strlen($mail) > 50) {
-        array_push($error, 'Votre adresse fait plus de 50 charactères.');
-    }
+$errors = array();
 
-    if (count($error) > 0) {
-        $message = "<ul>";
-        $i = 0;
-        while ($i < count($error)) {
-            $message .= "<li>" . $error[$i] . "</li>";
-            $i++;
-        };
+if (!empty($_POST['inscription'])) {
+    $mail = clean($_POST['mail']);
+    $mdp = clean($_POST['mdp']);
+    $confirm_mdp = clean($_POST['confirm_mdp']);
 
-        $message .= "</ul>";
+    $errors = array();
 
-        echo $message;
+    $errors = cleanMail($errors, $mail, 'mail');
+    $errors = passwordValid($mdp, $errors , 3, 'mdp');
 
-        include "inscription.php";
-
-    } else {
+    if (count($errors) == 0) {
         if ($mdp === $confirm_mdp) {
             $attempt = new PdoDB;
             $attempt->check($mail);
@@ -44,10 +32,10 @@ if (isset($_POST['inscription'])) {
             }
 
         } else {
-            array_push($error, "Les mots de passes ne correspondent pas.");
-        };
+            $errors['check'] = 'Les mots de passe ne correspondent pas';
+        }
+    } else {
+        echo 'Erreur dans le formulaire';
     }
 
-} else {
-    include_once "inscription.php";
-};
+}
