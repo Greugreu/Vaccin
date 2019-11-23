@@ -79,18 +79,18 @@ class PdoDb extends PDO
 
     public function insert($mail, $mdp)
     {
-        $reqInsert = "INSERT INTO vaccin.user
-                    (usermail, userpass) 
-                    VALUES ('',:mail, :mdp)";
+        $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp)";
         $query= $this->prepare($reqInsert);
         $query->bindValue('mail', $mail, self::PARAM_STR);
-        $query->bindValue('mail', $mdp);
+        $query->bindValue('mdp', $mdp);
         $query->execute();
     }
 
-    public function updateInfo($nom, $prenom, $adresse, $naissance, $medecin)
+    public function updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id)
     {
-        $reqUpdate = 'UPDATE vaccin.user SET usernom=:nom, userprenom=:prenom, useradress=:adress, usernaissance=:naissance, usermedecin=:medecin';
+        $reqUpdate = "UPDATE vaccin.userinfo 
+                    SET usernom=:nom, userprenom=:prenom, useradress=:adress, usernaissance=:naissance, usermedecin=:medecin
+                    WHERE id=$id";
         $query = $this->prepare($reqUpdate);
         $query->bindValue(':nom', $nom, self::PARAM_STR);
         $query->bindValue(':prenom', $prenom, self::PARAM_STR);

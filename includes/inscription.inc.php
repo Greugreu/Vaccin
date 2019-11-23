@@ -1,8 +1,7 @@
 <?php
-
-use classes\PdoDb;
-
+include 'functions/auto_loader.php';
 include 'functions/functions.php';
+use classes\PdoDb;
 
 $title = 'Inscription';
 

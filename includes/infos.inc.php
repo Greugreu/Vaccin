@@ -27,8 +27,9 @@ if (!empty($_POST['infos'])) {
         $errors = textValid($medecin, $errors, 3, 50, 'medecin');
 
         if (count($errors) == 0) {
+            $id = $_GET['id'];
             $query = new PdoDb();
-            $query->updateInfo($nom, $prenom, $adresse, $naissance, $medecin);
+            $query->updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id);
         }
 
     } else {

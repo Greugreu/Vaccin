@@ -1,4 +1,8 @@
-<form action="index.php?page=infos" method="post">
+<?php
+include_once 'includes/infos.inc.php';
+
+?>
+<form action="#" method="post">
     <label for="nom">Nom&nbsp;:</label>
     <input type="text" name="nom" id="nom" placeholder="Votre nom">
     <label for="prénom">Prénom&nbsp;:</label>
