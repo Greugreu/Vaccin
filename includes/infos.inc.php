@@ -1,53 +1,37 @@
-<form action="index.php?page=infos" method="post">
-    <label for="nom">Nom&nbsp;:</label>
-    <input type="text" name="nom" id="nom" placeholder="Votre nom">
-    <label for="prénom">Prénom&nbsp;:</label>
-    <input type="text" name="prénom" id="prénom" placeholder="Votre prénom">
-    <label for="adresse">Adresse&nbsp;:</label>
-    <input type="text" name="adresse" id="adresse" placeholder="Votre adresse">
-    <label for="naissance">Votre date de naissance</label>
-    <select name="naissance" id="jourNaissance">
-        <?php
-        for ($i = 1; $i <= 31; $i++) {
-            echo '<option value="'.$i.'">'.$i.'</option>';
-        }
-        ?>
-    </select>
-    <label for="moisNaissance"></label>
-    <select name="naissance" id="moisNaissance">
-        <?php
-        for ($i = 1; $i <= 12; $i++) {
-            echo '<option value="'.$i.'">'.$i.'</option>';
-        }
-        ?>
-    </select>
-    <label for="anneeNaissance"></label>
-    <select name="naissance" id="anneeNaissance">
-        <?php
-        for ($i = 1900; $i <= date("Y"); $i++) {
-            echo '<option value="'.$i.'">'.$i.'</option>';
-        }
-        ?>
-    </select>
-    <label for="medecin">Votre medecin traitant&nbsp;:</label>
-    <input type="text" name="medecin" id="medecin" placeholder="Médecin">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <label for="">&nbsp;:</label>
-    <input type="text" name="">
-    <button type="submit">Envoyer</button>
-    <input type="hidden" name="infos" id="infos">
 
-</form>
+
+<?php
+
+use classes\PdoDb;
+
+
+$errors = array();
+
+if (!empty($_POST['infos'])) {
+    $nom = !empty($_POST['nom']) ? $_POST['nom'] : "";
+    $prenom = !empty($_POST['prenom']) ? $_POST['prenom'] : "";
+    $adresse = !empty($_POST['adresse']) ? $_POST['adresse'] : "";
+    $naissance = !empty($_POST['naissance']) ? $_POST['naissance'] : "";
+    $medecin = !empty($_POST['medecin']) ? $_POST['medecin'] : "";
+
+    if(!empty($_POST['infos'])) {
+        $nom = clean($_POST['nom']);
+        $prenom = clean($_POST['prenom']);
+        $adresse = clean($_POST['adresse']);
+        $naissance = clean($_POST['naissance']);
+        $medecin = clean($_POST['medecin']);
+
+        $errors = textValid($nom, $errors, 3, 50, 'nom');
+        $errors = textValid($prenom, $errors, 3, 50, 'prenom');
+        $errors = textValid($adresse, $errors, 3, 100, 'adresse');
+        $errors = textValid($medecin, $errors, 3, 50, 'medecin');
+
+        if (count($errors) == 0) {
+            $query = new PdoDb();
+            $query->updateInfo($nom, $prenom, $adresse, $naissance, $medecin);
+        }
+
+    } else {
+        echo "<p>Erreur dans le formulaire. </p>";
+    }
+}
