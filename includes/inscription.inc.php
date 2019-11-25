@@ -1,5 +1,4 @@
 <?php
-include 'functions/auto_loader.php';
 include 'functions/functions.php';
 use classes\PdoDb;
 
@@ -19,11 +18,10 @@ if (!empty($_POST['inscription'])) {
 
     if (count($errors) == 0) {
         if ($mdp === $confirm_mdp) {
-            $attempt = new PdoDB;
-            $attempt->check($mail);
-            if ($attempt->resultat == 0) {
+            $attempt = check($mail);
+            if ($attempt == 0) {
                 $mdp = password_hash($mdp, PASSWORD_DEFAULT);
-                $attempt->insert($mail, $mdp);
+                insert($mail, $mdp);
 
                 echo '<p>Inscription OK</p>';
             } else {

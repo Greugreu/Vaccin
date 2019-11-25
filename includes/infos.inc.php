@@ -2,7 +2,8 @@
 
 <?php
 
-use classes\PdoDb;
+include 'includes/pdo.php';
+include 'functions/queryPdo.php';
 
 
 $errors = array();
@@ -28,8 +29,7 @@ if (!empty($_POST['infos'])) {
 
         if (count($errors) == 0) {
             $id = $_GET['id'];
-            $query = new PdoDb();
-            $query->updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id);
+            updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id);
         }
 
     } else {
