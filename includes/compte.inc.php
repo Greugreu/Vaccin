@@ -1,12 +1,12 @@
 <?php
+include 'includes/pdo.php';
 include 'functions/functions.php';
-use classes\PdoDb;
+include 'functions/queryPdo.php';
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])){
     $id = $_GET['id'];
     $sql = "SELECT * FROM vaccin.user WHERE id = $id";
-    $query = new PdoDb();
-    $query->select($sql);
+    $query = select($sql);
     $user = $query->fetch();
 
     if (empty($user)) {
