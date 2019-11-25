@@ -10,8 +10,8 @@ $success = false;
 
 
 
-$sql = "SELECT * FROM user
-          WHERE id = $id";
+$sql = "SELECT * FROM conect
+          WHERE id = 9";
 $query = $pdo->prepare($sql);
 $query->execute();
 $record = $query->fetch();
