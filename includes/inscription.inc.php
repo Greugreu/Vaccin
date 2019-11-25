@@ -1,6 +1,7 @@
 <?php
+include 'includes/pdo.php';
 include 'functions/functions.php';
-use classes\PdoDb;
+include 'functions/queryPdo.php';
 
 $title = 'Inscription';
 
