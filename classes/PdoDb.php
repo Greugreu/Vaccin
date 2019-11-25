@@ -86,6 +86,17 @@ class PdoDb extends PDO
         $query->execute();
     }
 
+    public function insertContact($nom, $prenom, $email, $message)
+    {
+        $reqInsert = "INSERT INTO contact VALUES ('', :nom, :prenom, :email, :message)";
+        $query= $this->prepare($reqInsert);
+        $query->bindValue(':nom',$nom, PDO::PARAM_STR);
+        $query->bindValue(':prenom',$prenom, PDO::PARAM_STR);
+        $query->bindValue(':email',$email, PDO::PARAM_STR);
+        $query->bindValue(':message',$message, PDO::PARAM_STR);
+        $query->execute();
+    }
+
     public function updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id)
     {
         $reqUpdate = "UPDATE vaccin.userinfo 
