@@ -9,7 +9,7 @@ class PdoDb extends PDO
     private $db = 'vaccin';
     private $host = 'localhost';
     private $user = 'root';
-    private $pwd = 'root';
+    private $pwd = '';
     private $con; //
     public $resultat;
     private $select;
