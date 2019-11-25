@@ -1,5 +1,12 @@
 @import "reset.css";
-
-label{
-    display: block;
+body{
+    font-family: "Roboto Light", sans-serif, arial;
 }
+
+
+.contact form{
+    width:100%;
+    max-width: 840px;
+    margin:0 auto;
+}
+

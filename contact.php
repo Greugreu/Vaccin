@@ -1,21 +1,32 @@
-<form action="contact.inc.php" method="post">
+<?php
+include 'includes/contact.inc.php';
+include 'includes/header.php';
+?>
+<section class="contact">
 
-    <label for="nom">Nom*</label>
-    <input type="text" id="nom" name="nom" value="<?php if(!empty( $_POST['nom'])) {echo $_POST['nom'];} ?>">
-    <span class="error"><?php if(!empty($errors['nom'])) { echo $errors['nom']; } ?></span>
+        <form action="contact.php" method="post">
+            <div class="w50">
+                <label for="nom"></label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom">
+                <?php spanErr($errors, 'nom'); ?>
+            </div>
 
-    <label for="prenom">Prenom*</label>
-    <input type="text" id="prenom" name="prenom" value="<?php if(!empty( $_POST['prenom'])) {echo $_POST['prenom'];} ?>">
-    <span class="error"><?php if(!empty($errors['prenom'])) { echo $errors['prenom']; } ?></span>
+            <div class="w50">
+                <label for="email"></label>
+                <input type="text" id="email" name="email" placeholder="Votre adresse email">
+                <?php spanErr($errors, 'email'); ?>
+            </div>
 
-    <label for="email">Email*</label>
-    <input type="text" id="email" name="email" value="<?php if(!empty( $_POST['email'])) {echo $_POST['email'];} ?>">
-    <span class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></span>
+            <div class="w50">
+                <label for="message"></label>
+                <textarea name="message" id="message" rows="8" cols="80" placeholder="Votre message"></textarea>
+                <?php spanErr($errors, 'message'); ?>
+            </div>
 
-    <label for="message">Message*</label>
-    <textarea name="message" id="message" rows="8" cols="80"><?php if(!empty( $_POST['message'])) {echo $_POST['message'];} ?></textarea>
-    <span class="error"><?php if(!empty($errors['message'])) { echo $errors['message']; } ?></span>
+            <input type="submit" name="submitted" value="Envoyer">
+        </form>
 
-    <input type="submit" name="submitted" value="Envoyer">
+</section>
 
-</form>
+
+<?php include 'includes/footer.php' ?>
