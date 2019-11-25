@@ -23,6 +23,7 @@
             }
             ?>
             <li><a href="#">Contact</a></li>
+            <li><a href="adminIndex.php">Admin</a></li>
         </ul>
     </nav>
 </header>
