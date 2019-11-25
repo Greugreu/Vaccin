@@ -1,6 +1,7 @@
 <?php
 include 'functions/auto_loader.php';
 include 'functions/functions.php';
+
 use classes\PdoDb;
 
 //  Récupération de l'utilisateur et de son pass hashé
@@ -10,14 +11,13 @@ $success = false;
 
 
 
-$sql = "SELECT * FROM conect
-          WHERE id = 9";
-$query = $pdo->prepare($sql);
-$query->execute();
-$record = $query->fetch();
+$sql = "SELECT * FROM user
+          WHERE id = :id";
+$query = new PdoDb();
+$resultat = $query->selectTableau($sql);
 
 // Comparaison du pass envoyé via le formulaire avec la base
-$confmdp = password_verify($_POST['mdp'], $resultat['mdp']);
+$userpass = password_verify($_POST['userpass'], $resultat['userpass']);
 
 if (!$resultat)
 {
@@ -25,11 +25,11 @@ if (!$resultat)
 }
 else
 {
-    if ($confmdp) {
+    if ($userpass) {
         session_start();
         $_SESSION['id'] = $resultat['id'];
-        $email =$_POST['email'];
-        $_SESSION['email'] = $email;
+        $usermail =$_POST['usermail'];
+        $_SESSION['usermail'] = $usermail;
         echo 'Vous êtes connecté !';
     }
     else {
