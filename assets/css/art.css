@@ -1,0 +1,48 @@
+@import "reset.css";
+
+.wrap2{
+    max-width: 1150px;
+    width: 100%;
+    margin:0 auto;
+}
+h1{
+    font-size: 4em;
+    text-align: center;
+    color: #034ea2;
+    margin-bottom: 50px;
+}
+h2{
+    font-size: 2em;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 15px;
+}
+h3 {
+    font-size: 1em;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.blocA{
+    margin-bottom: 30px;
+}
+.blocA .bloc1{
+    width: 23%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 220px;
+}
+.blocB .bloc1{
+    width: 22%;
+    float: left;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    border: solid;
+    padding: 2px;
+}
+a{
+    color: #034ea2;
+}
