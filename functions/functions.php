@@ -19,7 +19,7 @@ function textValid($value, $err, $minl, $maxl, $key, $empty = true)
         }
     } else {
         if ($empty) {
-            $err[$key] = 'Veuillez renseigner le champ';
+            $err[$key] = 'Veuillez renseigner ce champ';
         }
     }
     return $err;

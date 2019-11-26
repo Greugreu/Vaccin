@@ -1,8 +1,8 @@
 <?php
-include 'classes/PdoDb.php';
-use classes\PdoDb;
+include 'includes/pdo.php';
+include 'functions/queryPdo.php';
+require 'functions/functions.php';
 
-require('functions/functions.php');
 $errors = array();
 $success = false;
 
@@ -21,19 +21,12 @@ if(!empty($_POST['submitted'])) {
 
 
 
-
     if(count($errors) == 0) {
 
         $success = true;
-
-        $sql = "INSERT INTO contact VALUES ('',:nom, :email,:message)";
-        $query = new PdoDb;
-        $insert = $query->insertContact($nom, $email, $message);
+        insertContact($nom, $email, $message);
 
         header('Location: index.php');
 
-    }else {
-        die('404');
     }
-
 }

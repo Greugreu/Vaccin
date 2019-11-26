@@ -27,8 +27,18 @@ function insert($mail, $mdp)
     global $pdo;
     $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp)";
     $query= $pdo->prepare($reqInsert);
-    $query->bindValue('mail', $mail, self::PARAM_STR);
+    $query->bindValue('mail', $mail, PDO::PARAM_STR);
     $query->bindValue('mdp', $mdp);
+    $query->execute();
+}
+function insertContact($nom, $email, $message)
+{
+    global $pdo;
+    $reqInsert = "INSERT INTO contact VALUES ('', :nom, :email, :message)";
+    $query= $pdo->prepare($reqInsert);
+    $query->bindValue('nom', $nom, PDO::PARAM_STR);
+    $query->bindValue('email', $email, PDO::PARAM_STR);
+    $query->bindValue('message', $message, PDO::PARAM_STR);
     $query->execute();
 }
 
@@ -39,11 +49,11 @@ function updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id)
                     SET usernom=:nom, userprenom=:prenom, useradress=:adress, usernaissance=:naissance, usermedecin=:medecin
                     WHERE id=$id";
     $query = $pdo->prepare($reqUpdate);
-    $query->bindValue(':nom', $nom, self::PARAM_STR);
-    $query->bindValue(':prenom', $prenom, self::PARAM_STR);
+    $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
     $query->bindValue(':adress', $adresse);
     $query->bindValue(':naissance', $naissance);
-    $query->bindValue(':medecin', $medecin, self::PARAM_STR);
+    $query->bindValue(':medecin', $medecin, PDO::PARAM_STR);
     $query->execute();
 
 }
