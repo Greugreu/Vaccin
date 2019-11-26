@@ -19,5 +19,5 @@ require 'includes/login.inc.php';
         } ?>
     </span>
 
-    <input type="submit" name="submitted" value="Connection">
+    <input type="submit" name="login" value="Connection">
 </form>
