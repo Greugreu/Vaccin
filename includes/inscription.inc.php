@@ -26,10 +26,14 @@ if (!empty($_POST['inscription'])) {
     if (empty($reqmail)) {
         if ($mdp === $confirm_mdp) {
             $mdp = password_hash($mdp, PASSWORD_DEFAULT);
-            $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp, '', '', '', '', '')";
+            $token = generateToken();
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp, '', '', '', '', '', :token, :ip)";
             $query= $pdo->prepare($reqInsert);
             $query->bindValue(':mail', $mail, PDO::PARAM_STR);
             $query->bindValue(':mdp', $mdp);
+            $query->bindValue(':token', $token);
+            $query->bindValue(':ip', $ip);
             $query->execute();
             echo '<p>Inscription OK</p>';
         } else {
