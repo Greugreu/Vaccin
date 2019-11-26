@@ -1,6 +1,5 @@
 <?php
 include 'includes/pdo.php';
-include 'functions/queryPdo.php';
 require 'functions/functions.php';
 
 $errors = array();
@@ -24,7 +23,13 @@ if(!empty($_POST['submitted'])) {
     if(count($errors) == 0) {
 
         $success = true;
-        insertContact($nom, $email, $message);
+        global $pdo;
+        $sql = "INSERT INTO contact VALUES ('', :nom, :email, :message)";
+        $query= $pdo->prepare($sql);
+        $query->bindValue('nom', $nom, PDO::PARAM_STR);
+        $query->bindValue('email', $email, PDO::PARAM_STR);
+        $query->bindValue('message', $message, PDO::PARAM_STR);
+        $query->execute();
 
         header('Location: index.php');
 

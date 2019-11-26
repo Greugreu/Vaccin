@@ -1,7 +1,6 @@
 <?php
 include 'includes/pdo.php';
 include 'functions/functions.php';
-include 'functions/queryPdo.php';
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])){
     $id = $_GET['id'];

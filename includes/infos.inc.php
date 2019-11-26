@@ -3,7 +3,6 @@
 <?php
 
 include 'includes/pdo.php';
-include 'functions/queryPdo.php';
 
 
 $errors = array();

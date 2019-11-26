@@ -68,11 +68,9 @@ body :-ms-input-placeholder {
     background: -o-linear-gradient(top left, #034ea2 0%, #4698a2 100%);
     background: linear-gradient(to bottom right, #034ea2 0%, #4698a2 100%);
     position: absolute;
-    top: 50%;
     left: 0;
     width: 100%;
     height: 500px;
-    margin-top: -200px;
     overflow: hidden;
 }
 .wrapper.form-success .container h1 {
@@ -88,7 +86,7 @@ body :-ms-input-placeholder {
 .container h2 {
     font-size: 40px;
     transition-duration: 1s;
-    transition-timing-function: ease-in-put;
+
     font-weight: 200;
 }
 form {
@@ -180,4 +178,3 @@ span
     }
 }
 
-}
