@@ -1,10 +1,10 @@
 <?php
+
 include 'includes/pdo.php';
 include 'functions/functions.php';
 include 'functions/queryPdo.php';
 
 $title = 'Inscription';
-
 $errors = array();
 
 if (!empty($_POST['inscription'])) {
@@ -13,27 +13,31 @@ if (!empty($_POST['inscription'])) {
     $confirm_mdp = clean($_POST['confirm_mdp']);
 
     $errors = array();
-
     $errors = cleanMail($errors, $mail, 'mail');
-    $errors = passwordValid($mdp, $errors , 3, 'mdp');
+    $errors = passwordValid($mdp, $errors, 3, 'mdp');
 
-    if (count($errors) == 0) {
+    $sql = "SELECT * FROM vaccin.user";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $reqres = $query->fetch(PDO::FETCH_ASSOC);
+
+    $reqmail = $reqres['usermail'];
+
+    if (empty($reqmail)) {
         if ($mdp === $confirm_mdp) {
-            $attempt = check($mail);
-            if ($attempt == 0) {
-                $mdp = password_hash($mdp, PASSWORD_DEFAULT);
-                insert($mail, $mdp);
-
-                echo '<p>Inscription OK</p>';
-            } else {
-                echo "<p>Un compte avec cette adresse existe déjà.</p>";
-            }
-
+            $mdp = password_hash($mdp, PASSWORD_DEFAULT);
+            $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp, '', '', '', '', '')";
+            $query= $pdo->prepare($reqInsert);
+            $query->bindValue(':mail', $mail, PDO::PARAM_STR);
+            $query->bindValue(':mdp', $mdp);
+            $query->execute();
+            echo '<p>Inscription OK</p>';
         } else {
-            $errors['check'] = 'Les mots de passe ne correspondent pas';
+            echo "<p>Un compte avec cette adresse existe déjà.</p>";
         }
     } else {
-        echo 'Erreur dans le formulaire';
+        $errors['mail'] = 'Les mots de passe ne correspondent pas';
     }
-
+} else {
+    echo 'Erreur dans le formulaire';
 }
