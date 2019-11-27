@@ -19,13 +19,9 @@ include('includes/header.php');
     <section class="page-slider">
         <div class="page-flexslider flexslider">
             <ul class="slides">
-                <li><img src="http://www.ccc-fr.de/wp-content/uploads/2018/08/test-de-langue-pipplet.jpg"
-                         alt="slide1">
-                </li>
-                <li>
-                    <img src="https://www.pervers-narcissique.com/wp-content/uploads/2019/05/test-300x199-300x199.jpg"
-                         alt="slide2"></li>
-                <li><img src="https://miro.medium.com/max/3016/0*i1XbVjul86E_CSyf.jpg" alt="slide3"></li>
+                <li><img class="sliderz" src="assets/img/1 (1).jpg" alt="slide1"></li>
+                <li><img class="sliderz" src="assets/img/1 (2).jpg" alt="slide2"></li>
+                <li><img class="sliderz" src="assets/img/1 (3).jpg" alt="slide3"></li>
             </ul>
         </div>
     </section>
