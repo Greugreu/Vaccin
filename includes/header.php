@@ -24,6 +24,7 @@
             }
             ?>
             <li><a href="contact.php">Contact</a></li>
+            <li><a href="mentionLegales.php">Contact</a></li>
         </ul>
     </nav>
 </header>
