@@ -103,3 +103,19 @@ function generateToken()
     }
     return $token;
 }
+
+function formselect($err, $select, $key)
+{
+    if(empty($select)){
+        $err[$key] = 'Veuillez sélectionner une option';
+    }
+    return $err;
+}
+
+function inputDate($err, $date, $key)
+{
+    if(empty($date)){
+        $err[$key] = 'Veuillez entrer une date';
+    }
+    return $err;
+}

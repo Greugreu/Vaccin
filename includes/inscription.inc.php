@@ -2,7 +2,6 @@
 
 include 'includes/pdo.php';
 include 'functions/functions.php';
-include 'functions/queryPdo.php';
 
 $title = 'Inscription';
 $errors = array();
@@ -16,7 +15,7 @@ if (!empty($_POST['inscription'])) {
     $errors = cleanMail($errors, $mail, 'mail');
     $errors = passwordValid($mdp, $errors, 3, 'mdp');
 
-    $sql = "SELECT * FROM vaccin.user";
+    $sql = "SELECT * FROM vaccin.user WHERE usermail='".$mail."'";
     $query = $pdo->prepare($sql);
     $query->execute();
     $reqres = $query->fetch(PDO::FETCH_ASSOC);
@@ -37,11 +36,9 @@ if (!empty($_POST['inscription'])) {
             $query->execute();
             echo '<p>Inscription OK</p>';
         } else {
-            echo "<p>Un compte avec cette adresse existe déjà.</p>";
+            echo "<p>Les mots de passe ne correspondent pas.</p>";
         }
     } else {
-        $errors['mail'] = 'Les mots de passe ne correspondent pas';
+        $errors['mail'] = 'Un compte avec cette adresse existe déjà';
     }
-} else {
-    echo 'Erreur dans le formulaire';
 }
