@@ -4,11 +4,13 @@
     <meta charset="UTF-8"/>
     <title>Vaccin</title>
     <link href="./assets/css/styles.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="b">
 <header>
-    <div class="nav">
-     <nav>
+
+
+    <nav class="navigation">
         <ul>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="article.php">Actualités</a></li>
@@ -23,7 +25,7 @@
             ?>
             <li><a href="#">Contact</a></li>
         </ul>
-      </nav>
-    </div>
+    </nav>
+
 </header>
 <main>

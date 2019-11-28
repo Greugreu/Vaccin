@@ -41,7 +41,6 @@
 /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {
     width: 100%;
-    display: block;
 }
 
 .flex-pauseplay span {
@@ -112,7 +111,7 @@ html[xmlns] .slides {
     height: 30px;
     margin: -20px 0 0;
     display: block;
-    background: url(https://images.dog.ceo/breeds/bulldog-boston/n02096585_341.jpg)no-repeat 0 0;
+    background: url(https://images.dog.ceo/breeds/bulldog-boston/n02096585_341.jpg) no-repeat 0 0;
     position: absolute;
     top: 50%;
     z-index: 10;
@@ -218,6 +217,7 @@ html[xmlns] .slides {
 .flex-control-thumbs .flex-active {
     opacity: 1;
     cursor: default;
+
 }
 
 @media screen and (max-width: 860px) {

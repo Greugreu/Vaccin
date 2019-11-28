@@ -11,10 +11,9 @@ $title = 'Home page';
 
 include('includes/header.php');
 ?>
-    <h1>Bienvenue sur <span> votre </span> carnet de santé en ligne </h1>
+
 
     <div class="clear"></div>
-    <div class="wrap">
 
     <section class="page-slider">
         <div class="page-flexslider flexslider">
@@ -25,61 +24,58 @@ include('includes/header.php');
             </ul>
         </div>
     </section>
+
+    <div class="clear"></div>
+    <div class="wrap">
+        <section class="middle">
+            <div class="middle-text">
+                <h2 class="title-middle">Informations</h2>
+                <br>
+                <span class="line"></span>
+                <br>
+            </div>
+            <br>
+        </section>
     </div>
     <div class="clear"></div>
     <div class="wrap">
-    <section class="middle">
-        <div class="middle-text">
-            <h2 class="title-middle">Informations</h2>
-            <br>
-            <span class="line"></span>
-            <br>
-            <p class="paragraph"> Nous vous rappelons que en ce mois de [insérer mois] , vous devriez pensez à vous
-                faire vacciner contre
-                telle maladie. Afin de vous procurer le vaccin veuillez vous renseigner à votre medecin traitant</p>
-        </div>
-        <br>
-    </section>
-    </div>
-    <div class="clear"></div>
-    <div class="wrap">
-    <section class="sectionX">
-        <div class="titre"></div>
-        <h3 class="title2">Insérer un titre</h3>
-        <p class="para">
-            Lorem ipsum dolor sit amet,  <br>
-            Lorem ipsum dolor sit amet, consectetur.  <br>
-            Lorem ipsum dolor sit amet, con. <br>
-            Lorem ipsum dolor sit amet, consece. <br>
-            Lorem ipsum dolor sit amet, consecedr. <br>
-        </p>
-        <a href="" class="more">More...</a>
-    </section>
-    </div>
-    <div class="wrap">
-<section class="sectionY">
-    <div class="titre2"></div>
-    <h3 class="title3">Insérer un titre</h3>
-    <p class="para">
-        Lorem ipsum dolor sit amet,  <br>
-        Lorem ipsum dolor sit amet, consectetur. <br>
-        Lorem ipsum dolor sit amet, con. <br>
-        Lorem ipsum dolor sit amet, consece. <br>
-        Lorem ipsum dolor sit amet, consecedr. <br>
-    </p>
-    <a href="" class="more2">More...</a>
-</section>
-    </div>
-    <div class="wrap">
+        <section class="sectionX">
+            <div class="titre"></div>
+            <h3 class="title2">Insérer un titre</h3>
+            <p class="para">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                Accusantium alias autem eum laudantium numquam praesentium<br>
+                quisquam, veniam voluptatem. Ducimus eligendi fuga id illo<br>
+                llum itaque labore maxime perferendis quos sapiente! <br>
+                Lorem ipsum dolor sit amet, consectetur adipising elit.
+            </p>
+            <a href="" class="more">More...</a>
+        </section>
+
+
+        <section class="sectionY">
+            <div class="titre2"></div>
+            <h3 class="title3">Insérer un titre</h3>
+            <p class="para">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                Accusantium alias autem eum laudantium numquam praesentium<br>
+                quisquam, veniam voluptatem. Ducimus eligendi fuga id illo<br>
+                llum itaque labore maxime perferendis quos sapiente! <br>
+                Lorem ipsum dolor sit amet, consectetur adipising elit.
+            </p>
+            <a href="" class="more2">More...</a>
+        </section>
+
+
         <section class="sectionZ">
             <div class="titre2"></div>
             <h3 class="title4">Insérer un titre</h3>
             <p class="para">
-                Lorem ipsum dolor sit amet,  <br>
-                Lorem ipsum dolor sit amet, consectetur. <br>
-                Lorem ipsum dolor sit amet, con. <br>
-                Lorem ipsum dolor sit amet, consece. <br>
-                Lorem ipsum dolor sit amet, consecedr. <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                Accusantium alias autem eum laudantium numquam praesentium<br>
+                quisquam, veniam voluptatem. Ducimus eligendi fuga id illo<br>
+                llum itaque labore maxime perferendis quos sapiente! <br>
+                Lorem ipsum dolor sit amet, consectetur adipising elit.
             </p>
             <a href="" class="more2">More...</a>
         </section>
