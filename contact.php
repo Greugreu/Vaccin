@@ -2,8 +2,9 @@
 include 'includes/header.php';
 include 'includes/contact.inc.php';
 ?>
+<div class="backgroundForm">
 <div class="wrapper">
-    <div class="container">
+
         <h2>Nous contacter</h2>
 
         <form class="form" method="post" action="contact.php">
@@ -12,7 +13,7 @@ include 'includes/contact.inc.php';
                 <input type="text" name="nom" id="nom" placeholder="Nom">
                 <?php spanErr($errors, 'nom'); ?>
             </div>
-            <div div="contactMail">
+            <div class="contactMail">
                 <label for="email"></label>
                 <input type="email" name="email" id="email" placeholder="Email">
                 <?php spanErr($errors, 'email');?>
@@ -24,7 +25,7 @@ include 'includes/contact.inc.php';
             </div>
             <input type="submit" name="submitted" value="Envoyer">
         </form>
-    </div>
-</div>
 
+</div>
+</div>
 <?php include 'includes/footer.php' ?>

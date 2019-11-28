@@ -1,52 +1,46 @@
-
 @import "reset.css";
 
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-weight: 300;
-}
-
-body{
+*{
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
     font-family: "Roboto Light", inherit, sans-serif, arial;
 }
 
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    font-weight: 300;
+.backgroundForm  {
+    padding: 90px;
+    background-image: url("../img/imageHeader.jpg");
+    background-repeat: no-repeat;
 }
-body ::-webkit-input-placeholder {
-    /* WebKit browsers */
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    font-weight: 300;
+img {
+    width: 100%;
 }
-body :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    opacity: 1;
-    font-weight: 300;
-}
-body ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
+
+body ::placeholder {
 
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
     opacity: 1;
     font-weight: 300;
 }
-body :-ms-input-placeholder {
-    /* Internet Explorer 10+ */
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    font-weight: 300;
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header nav {
+    background-color: #333333;
+    padding: 20px;
 }
 
 .wrap {
@@ -67,33 +61,53 @@ body :-ms-input-placeholder {
     background: -moz-linear-gradient(top left, #034ea2 0%, #4698a2 100%);
     background: -o-linear-gradient(top left, #034ea2 0%, #4698a2 100%);
     background: linear-gradient(to bottom right, #034ea2 0%, #4698a2 100%);
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 500px;
+    /*position: absolute;*/
+    /*left: 0;*/
+    margin: 0 auto;
+    width: 50%;
+    height: 700px;
     overflow: hidden;
+    border-radius: 15px;
 }
+
+
 .wrapper.form-success .container h1 {
     transform: translateY(85px);
 }
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 25px 0;
-    height: 400px;
+
+/*.container {*/
+/*    max-width: 600px;*/
+/*    margin: 0 auto;*/
+/*    padding: 25px 0;*/
+/*    height: 400px;*/
+/*    text-align: center;*/
+/*}*/
+
+.wrapper h2 {
+    font-size: 40px;
+    /*transition-duration: 1s;*/
     text-align: center;
+    font-weight: 200;
+    color: #fff;
+    padding-top: 60px;
 }
+
 .container h2 {
     font-size: 40px;
-    transition-duration: 1s;
-
+    /*transition-duration: 1s;*/
+    text-align: center;
     font-weight: 200;
+    color: #fff;
+    padding-top: 60px;
 }
+
+
 form {
-    padding: 20px 0;
+    padding: 100px 0;
     position: relative;
     z-index: 2;
 }
+
 form input {
     appearance: none;
     outline: 0;
@@ -110,14 +124,17 @@ form input {
     transition-duration: 0.25s;
     font-weight: 300;
 }
-form input:hover {
+
+* form input:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
+
 form input:focus {
     background-color: white;
     width: 300px;
     color: #333333;
 }
+
 form textarea {
     appearance: none;
     outline: 0;
@@ -134,14 +151,17 @@ form textarea {
     transition-duration: 0.25s;
     font-weight: 300;
 }
+
 form textarea:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
+
 form textarea:focus {
     background-color: white;
     width: 300px;
     color: #333333;
 }
+
 form button {
     appearance: none;
     outline: 0;
@@ -155,11 +175,14 @@ form button {
     font-size: 18px;
     transition-duration: 0.25s;
 }
+
 form button:hover {
     background-color: #f5f7f9;
 }
 
-span
+
+
+
 
 @-webkit-keyframes square {
     0% {
@@ -169,6 +192,7 @@ span
         transform: translateY(-700px) rotate(600deg);
     }
 }
+
 @keyframes square {
     0% {
         transform: translateY(0);

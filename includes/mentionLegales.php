@@ -1,3 +1,8 @@
+<?php
+include 'header.php';
+
+?>
+
 <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser le lien crédit
     subdelirium sur cette page de mentions légales.</strong><br/>
 Vos mentions légales :

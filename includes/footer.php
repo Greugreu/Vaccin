@@ -1,10 +1,20 @@
 <?php
+
 $date = date('Y');
 ?>
 </main>
+
+
+
+
+
+
+
+
 <footer>
-    <a href="includes/mentionLegales.php">Mention légales</a>
     <p>&copy; <?=$date?> - NFactory Corp.</p>
+    <a href="includes/mentionLegales.php">Mentions légales</a>
+
 </footer>
 </body>
 </html>
