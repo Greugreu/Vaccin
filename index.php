@@ -41,43 +41,42 @@ include('includes/header.php');
     <div class="wrap">
         <section class="sectionX">
             <div class="titre"></div>
-            <h3 class="title2">Insérer un titre</h3>
+            <h3 class="title2">La Michelite</h3>
             <p class="para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
-                Accusantium alias autem eum laudantium numquam praesentium<br>
-                quisquam, veniam voluptatem. Ducimus eligendi fuga id illo<br>
-                llum itaque labore maxime perferendis quos sapiente! <br>
-                Lorem ipsum dolor sit amet, consectetur adipising elit.
+                Après des années d'études ,le vaccin contre la michelite est enfin là ! <br>
+                Vous pourrez dorénavant vous faire vacciner chez votre médecin traitant.<br>
+                Faîtes bien attention , la michelite est bénigne mais très infectieuse ! <br>
+                Cette maladie est simplement le fait d'appeler tout le monde Michel, si  <br>
+                vous en êtes atteint, ne vous en faites pas, allez voir votre médecin.
             </p>
-            <a href="" class="more">More...</a>
+            <a href="" class="more">En savoir plus...</a>
         </section>
 
 
         <section class="sectionY">
             <div class="titre2"></div>
-            <h3 class="title3">Insérer un titre</h3>
+            <h3 class="title3">VaccinFactory</h3>
             <p class="para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
-                Accusantium alias autem eum laudantium numquam praesentium<br>
-                quisquam, veniam voluptatem. Ducimus eligendi fuga id illo<br>
-                llum itaque labore maxime perferendis quos sapiente! <br>
-                Lorem ipsum dolor sit amet, consectetur adipising elit.
+                Vous avez perdu votre carnet de santé? Pas de panique !<br>
+                Grâce aux informations apportées après votre inscription,<br>
+                votre médecin traitant aura accès à ces dernières afin de répondre au mieux à vos besoins.<br>
+                Ne vous en faites pas, vos données sont 100% sécurisées et protégées. <br>
+                Vous pouvez faire confiance en notre entreprise 100% Normande.
             </p>
-            <a href="" class="more2">More...</a>
+            <a href="" class="more2">En savoir plus...</a>
         </section>
 
 
         <section class="sectionZ">
             <div class="titre2"></div>
-            <h3 class="title4">Insérer un titre</h3>
+            <h3 class="title4">Notre vision</h3>
             <p class="para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
-                Accusantium alias autem eum laudantium numquam praesentium<br>
-                quisquam, veniam voluptatem. Ducimus eligendi fuga id illo<br>
-                llum itaque labore maxime perferendis quos sapiente! <br>
-                Lorem ipsum dolor sit amet, consectetur adipising elit.
+                Nous avons étudié le comportement des personnes, <br>
+                une interrogation subvient souvent quand aux vaccins à faire.<br>
+                Bientot vous saurez même quels vaccins effectuer ! <br>
+                Nous intervenons sur la famille et sur toutes maladies soignable. <br>
+                Si vous avez un cancer des poumons, désolé,  il est déjà trop tard ...
             </p>
-            <a href="" class="more2">More...</a>
         </section>
     </div>
 <?php include('includes/footer.php');

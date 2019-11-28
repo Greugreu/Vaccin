@@ -1,7 +1,7 @@
 @import "reset.css";
 @import "flexslider.css";
 
-body {
+.b {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -105,10 +105,11 @@ h1 span {
 }
 
 .sectionX h3, .sectionY h3, .sectionZ h3 {
-    font-size: 35px;
+    font-size: 25px;
     color: #034ea2;
     text-align: justify;
 }
+.sectionX h3 .title2,
 
 .sectionX .para {
     line-height: 25px;
@@ -124,7 +125,6 @@ h1 span {
 
 .sectionX, .sectionY, .sectionZ {
     padding-left: 50px;
-
 }
 
 .bottom-barz {
