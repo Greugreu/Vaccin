@@ -1,0 +1,100 @@
+@import "reset.css";
+
+.wrap5{
+    max-width: 1100px;
+    width: 70%;
+    margin:0 auto;
+}
+h1{
+    font-size: 5em;
+    text-align: center;
+    color: #034ea2;
+    margin-bottom: 100px;
+}
+h2{
+    font-size: 2.2em;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 25px;
+
+}
+h3 {
+    font-size: 1.2em;
+    text-align: left;
+    margin-bottom: 10px;
+    line-height: 130%;
+}
+.part1{
+    margin-bottom: 100px;
+    background-color: #034ea2;
+}
+.part2{
+    margin-bottom: 100px;
+    background-color: aquamarine;
+}
+.blocA{
+    margin-bottom: 30px;
+}
+.blocB{
+    margin-bottom: 30px;
+}
+.blocC{
+    margin-bottom: 30px;
+}
+.blocA .bloc1{
+    width: 31.33%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    border: solid;
+    border-radius: 10px;
+    border-color: #034ea2;
+    padding: 10px;
+    height: 180px;
+}
+.blocB .bloc2{
+    width: 31.33%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    border-radius: 10px;
+    border: solid;
+    border-radius: 10px;
+    border-color: #034ea2;
+    padding: 10px;
+    height: 180px;
+}
+.blocB .bloc3{
+    width: 48%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    border: solid;
+    border-radius: 10px;
+    border-color: #034ea2;
+    padding: 10px;
+    height: 150px;
+}
+.blocC .bloc1{
+    width: 98%;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+    border-radius: 10px;
+    border: solid;
+    border-color: #034ea2;
+    padding: 10px;
+    height: 130px;
+}
+.title{
+    text-decoration: none;
+    color: #333333;
+    border-bottom: solid;
+}
+.para{
+    text-decoration: none;
+    color: #9C867D;
+}
+.para:hover{
+    color: aquamarine;
+}
