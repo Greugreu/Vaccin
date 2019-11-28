@@ -1,14 +1,9 @@
 <?php
 include 'includes/vaccin.inc.php';
 include 'includes/pdo.php';
-include 'functions/functions.php';
 /*include 'includes/header.php';*/
 
 
-$sql = "SELECT * FROM vaccin";
-$query = $pdo->prepare($sql);
-$query->execute();
-$vaccin = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -19,7 +14,8 @@ $vaccin = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php
         for ($i=0; $i < count($vaccin); $i++)
         {
-            echo '<option value="'. $vaccin[$i]['vnom'] .' ">' . $vaccin[$i]['vnom'] . ' ' . '</span>';
+            echo '<option value="'. $vaccin[$i]['vnom'] .' ">' . $vaccin[$i]['vnom'] . ' ' .
+                '</span>';
 }
         ?>
     </select>
