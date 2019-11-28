@@ -5,17 +5,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
-header nav ul li a {
+.h .navigation ul li a {
     text-decoration: none;
     color: #ffff;
 }
 
-header nav ul {
+.h .navigation ul {
     display: flex;
     justify-content: space-evenly;
 }
 
-header nav {
+.h .navigation {
     background-color: #333333;
     padding: 20px;
 }
@@ -24,20 +24,6 @@ header nav {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-}
-
-
-h1 {
-    text-align: center;
-    color: #333333;
-    text-decoration: #034ea2;
-    font-size: 30px;
-    margin-top: 50px;
-    padding-bottom: 50px;
-}
-
-h1 span {
-    color: #034ea2;
 }
 
 .page-slider .flexslider .slides .sliderz {
