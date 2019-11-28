@@ -90,6 +90,7 @@ function passwordValid($password,$err , $minl , $key)
         } elseif (mb_strlen($password) < $minl) {
             $err[$key] = 'Votre mot de passe doit faire un minimum de '.$minl.' caractères';
         }
+<<<<<<< HEAD
     }else{
         $err[$key] = 'Veuillez renseigner le mot de passe';
     }
@@ -104,3 +105,36 @@ function generateToken()
     }
     return $token;
 }
+=======
+    } else {
+        $err[$key] = 'Veuillez remplir ce champ';
+    }
+    return $err;
+};
+
+function generateToken()
+{
+    $token = '';
+    $chaine = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890";
+    for ($i=0; $i < 255 ; $i++) {
+        $token .= $chaine[rand(0,mb_strlen($chaine) -1)];
+    }
+    return $token;
+}
+
+function formselect($err, $select, $key)
+{
+    if(empty($select)){
+        $err[$key] = 'Veuillez sélectionner une option';
+    }
+    return $err;
+}
+
+function inputDate($err, $date, $key)
+{
+    if(empty($date)){
+        $err[$key] = 'Veuillez entrer une date';
+    }
+    return $err;
+}
+>>>>>>> origin/feature/account

@@ -1,5 +1,8 @@
 @import "reset.css";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/feature/account
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
 * {
@@ -154,6 +157,7 @@ form button:hover {
         transform: translateY(-700px) rotate(600deg);
     }
 }
+<<<<<<< HEAD
 .signMail{
     margin-bottom: 10px;
 }
@@ -435,3 +439,6 @@ h1 span {
     color: #fff;
 >>>>>>> origin/features/accueil.inc.php
 }
+=======
+
+>>>>>>> origin/feature/account
