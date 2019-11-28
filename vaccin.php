@@ -1,23 +1,27 @@
 <?php
 include 'includes/vaccin.inc.php';
+include 'includes/pdo.php';
+include 'functions/functions.php';
 /*include 'includes/header.php';*/
+
+
+$sql = "SELECT * FROM vaccin";
+$query = $pdo->prepare($sql);
+$query->execute();
+$vaccin = $query->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <form action="" method="post">
     <label for="vaccin">Sélectionnez votre vaccin</label>
     <select name="vaccin" id="vaccin">
-        <option value="Diphtérie">Diphtérie</option>
-        <option value="Tétanos">Tétanos</option>
-        <option value="Poliomyélite">Poliomyélite</option>
-        <option value="Tuberculose">Tuberculose</option>
-        <option value="Coqueluche">Coqueluche</option>
-        <option value="Rubéole">Rubéole</option>
-        <option value="Rougeole">Rougeole</option>
-        <option value="Oreillons">Oreillons</option>
-        <option value="Varicelle">Varicelle</option>
-        <option value="Grippe">Grippe</option>
-        <option value="Hépatite_B">Hépatite_B</option>
-        <option value="Zona">Zona</option>
+
+        <?php
+        for ($i=0; $i < count($vaccin); $i++)
+        {
+            echo '<option value="'. $vaccin[$i]['vnom'] .' ">' . $vaccin[$i]['vnom'] . ' ' . '</span>';
+}
+        ?>
     </select>
     <label for="vaclot">Numéro de lot du vaccin</label>
     <input type="text" name="vaclot" id="vaclot">

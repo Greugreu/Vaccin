@@ -19,6 +19,7 @@ if (!empty($_POST['login'])) {
     $query->execute();
     $resultat = $query->fetch(PDO::FETCH_ASSOC);
 
+
     $mail = $resultat['usermail'];
     $mdp = $resultat['userpass'];
 
@@ -27,7 +28,7 @@ if (!empty($_POST['login'])) {
     } else {
         if (password_verify($userpass, $mdp)) {
             session_start();
-            $_SESSION['usermail'] = $usermail;
+            $_SESSION = $resultat;
             echo 'Vous êtes connecté !';
         } else {
             echo 'Mauvais ident ou mot de passe !';

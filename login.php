@@ -1,5 +1,6 @@
 <?php
 require 'includes/login.inc.php';
+include 'includes/header.php';
 ?>
 
 <form METHOD="post" ACTION="">
@@ -21,3 +22,4 @@ require 'includes/login.inc.php';
 
     <input type="submit" name="login" value="Connection">
 </form>
+<p><a class="restmdp" href="resetMDP.php">J'ai oublié mon mot de passe</a> </p>

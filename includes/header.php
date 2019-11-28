@@ -6,8 +6,8 @@
     <title>Vaccin</title>
     <meta name="description" content="">
 
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+<!--    <link rel="stylesheet" href="assets/css/styles.css">
+--></head>
 
 <body>
 <header>
@@ -16,8 +16,9 @@
             <li><a href="index.php">Accueil</a></li>
             <li><a href="#">Actualités</a></li>
             <li><a href="inscription.php">Inscription</a></li>
-            <li><a href="../account.php?id=<?php echo $user['id'] ?>">Mon compte</a></li>
+            <li><a href="compte.php">Mon compte</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
             <li><a href="adminIndex.php">Admin</a></li>
             <li><a href="vaccin.php">Vaccin</a></li>
         </ul>

@@ -90,6 +90,8 @@ function passwordValid($password,$err , $minl , $key)
         } elseif (mb_strlen($password) < $minl) {
             $err[$key] = 'Votre mot de passe doit faire un minimum de '.$minl.' caractères';
         }
+    } else {
+        $err[$key] = 'Veuillez remplir ce champ';
     }
     return $err;
 };
@@ -97,9 +99,9 @@ function passwordValid($password,$err , $minl , $key)
 function generateToken()
 {
     $token = '';
-    $chaine = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZé-_èçàè&°+$%*/!&1234567890";
+    $chaine = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890";
     for ($i=0; $i < 255 ; $i++) {
-        $token .= $chaine[rand(0,mb_strlen($chaine))];
+        $token .= $chaine[rand(0,mb_strlen($chaine) -1)];
     }
     return $token;
 }
