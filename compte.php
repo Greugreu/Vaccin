@@ -68,19 +68,11 @@ $tab = $query->fetchAll(PDO::FETCH_ASSOC);
                         echo '</tfoot>';
                         } else {
                             echo '<h2>Vous n\'avez pas de vaccins à votre actif.';
-                            echo '<button><a href="vaccin.php">Nouveau</a></button>';
+                            echo '<button><a href="vaccin.php">Nouveau Vaccin</a></button>';
                         }
                         ?>
 
                     </table>
-                </div>
-                <!-- // end panel body -->
-                <div class="panel-footer">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination" id="myPager">
-
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>

@@ -39,7 +39,6 @@ if (!empty($_POST['vaccination'])) {
     $query = $pdo->prepare($sql);
     $query->execute();
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
-//   debug($data);
     $vid = $data[0]['id'];
     $voblig = $data[0]['voblig'];
     $uid = $data[0]['id'];
@@ -49,13 +48,14 @@ if (!empty($_POST['vaccination'])) {
         $sql = "INSERT INTO 
                     uservac
                 VALUES
-                    (:userid, :vacid, :username, :uservacname, :uservaclot, NULL, NULL)";
+                    ('',:userid, :vacid, :username, :uservacname, :uservaclot, :inoc, NULL)";
         $query = $pdo->prepare($sql);
         $query->bindValue(':userid', $uid, PDO::PARAM_INT );
         $query->bindValue(':vacid', $vid, PDO::PARAM_INT );
         $query->bindValue(':username', $nom, PDO::PARAM_STR );
         $query->bindValue(':uservacname', $vnom, PDO::PARAM_STR );
         $query->bindValue(':uservaclot', $vlot, PDO::PARAM_STR);
+        $query->bindValue(':inoc', $inoc);
 
         $query->execute();
 
