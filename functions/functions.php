@@ -93,4 +93,12 @@ function passwordValid($password,$err , $minl , $key)
     }
     return $err;
 };
-
+function generateToken()
+{
+    $token = '';
+    $chaine = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZéèàè1234567890";
+    for ($i=0; $i < 255 ; $i++) {
+        $token .= $chaine[rand(0,mb_strlen($chaine))];
+    }
+    return $token;
+}

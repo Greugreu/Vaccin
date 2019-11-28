@@ -11,7 +11,7 @@ require 'includes/login.inc.php';
         } ?>
     </span>
 
-    <label for="usepass">Mot de Passe</label>
+    <label for="userpass">Mot de Passe</label>
     <input class="modpasse" id="userpass" type="password" name="userpass" value="">
     <span class="error">
         <?php if (!empty($errors['userpass'])){
@@ -21,3 +21,4 @@ require 'includes/login.inc.php';
 
     <input type="submit" name="login" value="Connection">
 </form>
+<p><a class="restmdp" href="resetMDP.php">J'ai oublié mon mot de passe</a> </p>
