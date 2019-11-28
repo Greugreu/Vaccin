@@ -90,6 +90,8 @@ function passwordValid($password,$err , $minl , $key)
         } elseif (mb_strlen($password) < $minl) {
             $err[$key] = 'Votre mot de passe doit faire un minimum de '.$minl.' caractères';
         }
+    }else{
+        $err[$key] = 'Veuillez renseigner le mot de passe';
     }
     return $err;
 };

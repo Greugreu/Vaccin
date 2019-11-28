@@ -1,12 +1,9 @@
 @import "reset.css";
 
-.wrap2{
-    max-width: 1150px;
-    width: 100%;
+.wrap5{
+    max-width: 1100px;
+    width: 70%;
     margin:0 auto;
-}
-#art{
-    background-color: #fff;
 }
 h1{
     font-size: 5em;
@@ -97,4 +94,7 @@ h3 {
 .para{
     text-decoration: none;
     color: #9C867D;
+}
+.para:hover{
+    color: aquamarine;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Vaccin</title>
-    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>

@@ -2,6 +2,7 @@
 include 'includes/pdo.php';
 include 'functions/functions.php';
 include 'functions/queryPdo.php';
+include 'includes/header.php';
 
 //L'utilisateur renseigne son mail
 //Le mail est check dans la DB
@@ -25,27 +26,32 @@ if (!empty($_POST['reset'])) {
     $resultat = $query->fetch(PDO::FETCH_ASSOC);
     $mail = $resultat['usermail'];
     $token = $resultat['token'];
-    $message = "<a href='rest.php?token=$token'>Changer mon mot de passe</a>";
-    var_dump($message);
+    $message = "<a class='message' href='rest.php?token=$token'>Changer mon mot de passe</a>";
+
         if (!empty($resultat['usermail'])) {
-         mail($mail, $message, $token);
-            debug($message);
+         echo $message;
      } else {
            echo 'faux';
      }
 }  ?>
 
-
+<div class="wrapper">
+    <div class="container">
 
 <form METHOD="post" ACTION="">
+   <div class="signMail" >
     <label for="usermail">Rentrez votre adresse mail</label>
     <input class= "utilisateur" id="usermail" type="email" name=usermail value="">
     <span class="error">
         <?php if (!empty($errors['usermail'])){
-            echo $errors['usermail'];
-        } ?>
+            echo $errors['usermail'];}
+             ?>
     </span>
-
+   </div>
     <input type="submit" name="reset" value="Reset MDP">
 </form>
 
+    </div>
+</div>
+<?php
+include 'includes/footer.php';

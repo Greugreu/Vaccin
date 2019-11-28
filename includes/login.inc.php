@@ -19,7 +19,7 @@ if (!empty($_POST['login'])) {
     $query->execute();
     $resultat = $query->fetch(PDO::FETCH_ASSOC);
 
-    debug($resultat);
+
     $mail = $resultat['usermail'];
     $mdp = $resultat['userpass'];
 
