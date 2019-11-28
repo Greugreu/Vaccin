@@ -3,7 +3,6 @@ include 'includes/inscription.inc.php';
 include 'includes/header.php';
 ?>
 
-<<<<<<< HEAD
     <div class="wrapper">
         <div class="container">
             <h2>Bienvenue</h2>
@@ -28,7 +27,6 @@ include 'includes/header.php';
             </form>
         </div>
     </div>
-=======
 <div class="wrapper">
     <div class="container">
         <h2>Bienvenue</h2>
@@ -53,6 +51,5 @@ include 'includes/header.php';
         </form>
     </div>
 </div>
->>>>>>> origin/feature/account
 
 <?php include 'includes/footer.php'?>

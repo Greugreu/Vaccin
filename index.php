@@ -2,18 +2,8 @@
 session_start();
 
 date_default_timezone_set('Europe/Paris');
-<<<<<<< HEAD
-<<<<<<< HEAD
 include_once ('functions/functions.php');
-=======
-include_once('classes/PdoDb.php');
-include_once('functions/functions.php');
-include_once "functions/auto_loader.php";
 
->>>>>>> origin/features/accueil.inc.php
-=======
-include_once ('functions/functions.php');
->>>>>>> origin/feature/account
 
 $title = 'Home page';
 

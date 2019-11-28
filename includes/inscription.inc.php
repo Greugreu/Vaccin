@@ -1,5 +1,4 @@
 <?php
-
 include 'includes/pdo.php';
 include 'functions/functions.php';
 
@@ -19,20 +18,15 @@ if (!empty($_POST['inscription'])) {
     $query = $pdo->prepare($sql);
     $query->execute();
     $reqres = $query->fetch(PDO::FETCH_ASSOC);
-<<<<<<< HEAD
-
-    $reqmail = $reqres['usermail'];
-    var_dump($reqmail);
-=======
 
     $reqmail = $reqres['usermail'];
 
->>>>>>> origin/feature/account
     if (empty($reqmail)) {
         if ($mdp === $confirm_mdp) {
             $mdp = password_hash($mdp, PASSWORD_DEFAULT);
             $token = generateToken();
             $ip = $_SERVER['REMOTE_ADDR'];
+
             $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp, '', '', '', '', '', :token, :ip)";
             $query= $pdo->prepare($reqInsert);
             $query->bindValue(':mail', $mail, PDO::PARAM_STR);
@@ -42,16 +36,9 @@ if (!empty($_POST['inscription'])) {
             $query->execute();
             echo '<p>Inscription OK</p>';
         } else {
-<<<<<<< HEAD
-            echo $errors['mail'] = 'Les mots de passe ne correspondent pas';
-        }
-    } else {
-       echo "<p>Un compte avec cette adresse existe déjà.</p>";
-=======
             echo "<p>Les mots de passe ne correspondent pas.</p>";
         }
     } else {
         $errors['mail'] = 'Un compte avec cette adresse existe déjà';
->>>>>>> origin/feature/account
     }
 }

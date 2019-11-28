@@ -84,28 +84,11 @@ function passwordValid($password,$err , $minl , $key)
     if (!empty($password)) {
         $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);
-
         if(!$lowercase || !$number) {
             $err[$key] = 'Votre mot de passe doit contenir au moins une lettre et un chiffre';
         } elseif (mb_strlen($password) < $minl) {
             $err[$key] = 'Votre mot de passe doit faire un minimum de '.$minl.' caractères';
         }
-<<<<<<< HEAD
-    }else{
-        $err[$key] = 'Veuillez renseigner le mot de passe';
-    }
-    return $err;
-};
-function generateToken()
-{
-    $token = '';
-    $chaine = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZéèàè1234567890";
-    for ($i=0; $i < 255 ; $i++) {
-        $token .= $chaine[rand(0,mb_strlen($chaine))];
-    }
-    return $token;
-}
-=======
     } else {
         $err[$key] = 'Veuillez remplir ce champ';
     }
@@ -137,4 +120,3 @@ function inputDate($err, $date, $key)
     }
     return $err;
 }
->>>>>>> origin/feature/account
