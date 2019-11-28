@@ -1,10 +1,8 @@
 <?php
-include 'functions/auto_loader.php';
+include 'includes/pdo.php';
 include 'functions/functions.php';
-use classes\PdoDb;
 
 $title = 'Inscription';
-
 $errors = array();
 
 if (!empty($_POST['inscription'])) {
@@ -13,28 +11,34 @@ if (!empty($_POST['inscription'])) {
     $confirm_mdp = clean($_POST['confirm_mdp']);
 
     $errors = array();
-
     $errors = cleanMail($errors, $mail, 'mail');
-    $errors = passwordValid($mdp, $errors , 3, 'mdp');
+    $errors = passwordValid($mdp, $errors, 3, 'mdp');
 
-    if (count($errors) == 0) {
+    $sql = "SELECT * FROM vaccin.user WHERE usermail='".$mail."'";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $reqres = $query->fetch(PDO::FETCH_ASSOC);
+
+    $reqmail = $reqres['usermail'];
+
+    if (empty($reqmail)) {
         if ($mdp === $confirm_mdp) {
-            $attempt = new PdoDB;
-            $attempt->check($mail);
-            if ($attempt->resultat == 0) {
-                $mdp = password_hash($mdp, PASSWORD_DEFAULT);
-                $attempt->insert($mail, $mdp);
+            $mdp = password_hash($mdp, PASSWORD_DEFAULT);
+            $token = generateToken();
+            $ip = $_SERVER['REMOTE_ADDR'];
 
-                echo '<p>Inscription OK</p>';
-            } else {
-                echo "<p>Un compte avec cette adresse existe déjà.</p>";
-            }
-
+            $reqInsert = "INSERT INTO user VALUES ('', :mail, :mdp, '', '', '', '', '', :token, :ip)";
+            $query= $pdo->prepare($reqInsert);
+            $query->bindValue(':mail', $mail, PDO::PARAM_STR);
+            $query->bindValue(':mdp', $mdp);
+            $query->bindValue(':token', $token);
+            $query->bindValue(':ip', $ip);
+            $query->execute();
+            echo '<p>Inscription OK</p>';
         } else {
-            $errors['check'] = 'Les mots de passe ne correspondent pas';
+            echo "<p>Les mots de passe ne correspondent pas.</p>";
         }
     } else {
-        echo 'Erreur dans le formulaire';
+        $errors['mail'] = 'Un compte avec cette adresse existe déjà';
     }
-
 }

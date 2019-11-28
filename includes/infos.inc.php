@@ -1,10 +1,9 @@
-
-
 <?php
-
-use classes\PdoDb;
-
-
+session_start();
+$id = $_SESSION['id'];
+include 'includes/pdo.php';
+include 'functions/functions.php';
+debug($id);
 $errors = array();
 
 if (!empty($_POST['infos'])) {
@@ -18,7 +17,6 @@ if (!empty($_POST['infos'])) {
         $nom = clean($_POST['nom']);
         $prenom = clean($_POST['prenom']);
         $adresse = clean($_POST['adresse']);
-        $naissance = clean($_POST['naissance']);
         $medecin = clean($_POST['medecin']);
 
         $errors = textValid($nom, $errors, 3, 50, 'nom');
@@ -27,9 +25,16 @@ if (!empty($_POST['infos'])) {
         $errors = textValid($medecin, $errors, 3, 50, 'medecin');
 
         if (count($errors) == 0) {
-            $id = $_GET['id'];
-            $query = new PdoDb();
-            $query->updateInfo($nom, $prenom, $adresse, $naissance, $medecin, $id);
+            $reqUpdate = "UPDATE user 
+                    SET usernom=:nom, userprenom=:prenom, useradress=:adress, usernaissance=:naissance, usermedecin=:medecin
+                    WHERE id='$id'";
+            $query = $pdo->prepare($reqUpdate);
+            $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+            $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+            $query->bindValue(':adress', $adresse);
+            $query->bindValue(':naissance', $naissance);
+            $query->bindValue(':medecin', $medecin, PDO::PARAM_STR);
+            $query->execute();;
         }
 
     } else {

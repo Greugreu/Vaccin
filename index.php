@@ -2,9 +2,7 @@
 session_start();
 
 date_default_timezone_set('Europe/Paris');
-include_once('classes/PdoDb.php');
-include_once('functions/functions.php');
-include_once "functions/auto_loader.php";
+include_once ('functions/functions.php');
 
 
 $title = 'Home page';
