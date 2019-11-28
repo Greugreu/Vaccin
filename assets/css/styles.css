@@ -2,6 +2,10 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 @import "flexslider.css";
 
+
+.b {
+    font-family: 'Roboto', sans-serif;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,36 +17,39 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
     font-weight: 300;
+
 }
 body ::-webkit-input-placeholder {
     /* WebKit browsers */
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    font-weight: 300;
+
+.h .navigation ul li a {
+    text-decoration: none;
+    color: #ffff;
+
 }
 body :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    opacity: 1;
-    font-weight: 300;
+
+.h .navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+
+    
 }
 body ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    opacity: 1;
-    font-weight: 300;
+
+.h .navigation {
+    background-color: #333333;
+    padding: 20px;
 }
+  
 body :-ms-input-placeholder {
     /* Internet Explorer 10+ */
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    font-weight: 300;
 }
 
 .wrap {
@@ -50,6 +57,10 @@ body :-ms-input-placeholder {
     width: 100%;
     margin: 0 auto;
 }
+
+
+.page-slider .flexslider .slides .sliderz {
+    width: 50%;
 
 .wrap2 {
     width: 100%;
@@ -263,6 +274,18 @@ h3 {
     min-height: 100px;
 
 }
+
+
+.sectionX h3, .sectionY h3, .sectionZ h3 {
+    font-size: 25px;
+    color: #034ea2;
+    text-align: justify;
+}
+.sectionX h3 .title2,
+
+.sectionX .para {
+    line-height: 25px;
+
 .title{
     text-decoration: none;
     color: #A1A1A1;
@@ -271,6 +294,7 @@ h3 {
 .para{
     text-decoration: none;
     color: black;
+
 }
 .italique{
     font-style: italic;
@@ -292,12 +316,17 @@ h3 .title:hover{
         margin-left: 1%;
     }
 
+.sectionX, .sectionY, .sectionZ {
+    padding-left: 50px;
+}
+
     .blocB .bloc2 {
         width: 48%;
         margin-bottom: 30px;
         margin-right: 1%;
         margin-left: 1%;
     }
+
 
 
     body {
