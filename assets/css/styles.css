@@ -1,4 +1,5 @@
 @import "reset.css";
+<<<<<<< HEAD
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
 * {
@@ -295,4 +296,142 @@ h3 .title:hover{
         margin-right: 1%;
         margin-left: 1%;
     }
+=======
+@import "flexslider.css";
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header nav {
+    background-color: #333333;
+    padding: 20px;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333333;
+    text-decoration: #034ea2;
+    font-size: 30px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+h1 span {
+    color: #034ea2;
+}
+
+.page-slider .flexslider .slides .sliderz {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.middle {
+    text-align: center;
+
+}
+
+
+.middle .middle-text {
+    font-size: 20px;
+
+}
+
+.middle .middle-text .title-middle {
+    color: #034ea2;
+}
+
+.middle .middle-text .paragraph {
+    color: #333333;
+    border: solid;
+    border-radius: 30px;
+}
+
+.middle .middle-text span.line {
+    height: 10px;
+    width: 10px;
+    background: #333;
+    display: block;
+    margin: 0 auto;
+    border: solid;
+    border-radius: 30px;
+}
+
+.sectionX {
+    width: 33.333333333%;
+    float: left;
+    padding: 0 10px;
+    text-align: justify;
+    margin-bottom: 20px;
+
+}
+
+.sectionY {
+    width: 33.333333333%;
+    float: left;
+    padding: 0 10px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.sectionZ {
+    width: 33.333333333%;
+    float: right;
+    padding: 0 10px;
+    text-align: justify;
+    margin-bottom: 20px;
+
+}
+
+.sectionX h3, .sectionY h3, .sectionZ h3 {
+    font-size: 35px;
+    color: #034ea2;
+    text-align: justify;
+}
+
+.sectionX .para {
+    line-height: 25px;
+}
+
+.sectionY .para {
+    line-height: 25px;
+}
+
+.sectionZ .para {
+    line-height: 25px;
+}
+
+.sectionX, .sectionY, .sectionZ {
+    padding-left: 50px;
+
+}
+
+.bottom-barz {
+    background: #333333;
+    padding: 20px 0 20px 0;
+}
+
+.bottom-barz .copyrights {
+    text-align: center;
+    color: #fff;
+>>>>>>> origin/features/accueil.inc.php
 }
