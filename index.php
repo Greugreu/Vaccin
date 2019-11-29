@@ -16,9 +16,9 @@ include('includes/header.php');
     <section class="page-slider">
         <div class="page-flexslider flexslider">
             <ul class="slides">
-                <li><img class="sliderz" src="assets/img/1 (1).jpg" alt="slide1"></li>
-                <li><img class="sliderz" src="assets/img/1 (2).jpg" alt="slide2"></li>
-                <li><img class="sliderz" src="assets/img/1 (3).jpg" alt="slide3"></li>
+                <li><img  src="assets/img/1.jpg" alt="slide1"></li>
+                <li><img  src="assets/img/2.jpg" alt="slide2"></li>
+                <li><img  src="assets/img/3.jpg" alt="slide3"></li>
             </ul>
         </div>
     </section>

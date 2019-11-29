@@ -3,11 +3,13 @@ $date = date('Y');
 ?>
 </main>
 <footer>
-
-    <div class="clear"></div>
-    <div class="bottom-barz">
-        <p class="copyrights">&copy; <?= $date ?> - Copyrights NFactory Corp All Rights Reserved.</p>
-    </div>
+    <p>&copy; <?=$date?> - NFactory Corp.</p>
 </footer>
+<script src="assets/js/script.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 </html>

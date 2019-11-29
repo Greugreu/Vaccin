@@ -1,72 +1,9 @@
 @import "reset.css";
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
-@import "flexslider.css";
 
-
-.b {
-    font-family: 'Roboto', sans-serif;
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-weight: 300;
-}
-
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    font-weight: 300;
-
-}
-body ::-webkit-input-placeholder {
-    /* WebKit browsers */
-
-
-.h .navigation ul li a {
-    text-decoration: none;
-    color: #ffff;
-
-}
-body :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-
-
-.h .navigation ul {
-    display: flex;
-    justify-content: space-evenly;
-
-    
-}
-body ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-
-
-.h .navigation {
-    background-color: #333333;
-    padding: 20px;
-}
-  
-body :-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-
-}
-
-.wrap {
-    max-width: 1040px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-
-.page-slider .flexslider .slides .sliderz {
-    width: 50%;
-
-.wrap2 {
-    width: 100%;
-    max-width: 840px;
-    margin: 0 auto;
-}
+/**
+WRAPPER FORMULAIRES
+ */
 
 .wrapper {
     background: #50a3a2;
@@ -74,35 +11,47 @@ body :-ms-input-placeholder {
     background: -moz-linear-gradient(top left, #034ea2 0%, #4698a2 100%);
     background: -o-linear-gradient(top left, #034ea2 0%, #4698a2 100%);
     background: linear-gradient(to bottom right, #034ea2 0%, #4698a2 100%);
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 400px;
-    margin-top: -200px;
+    /*position: absolute;*/
+    /*left: 0;*/
+    margin: 0 auto;
+    width: 50%;
+    height: 700px;
     overflow: hidden;
+    border-radius: 15px;
 }
+
+
 .wrapper.form-success .container h1 {
     transform: translateY(85px);
 }
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 80px 0;
-    height: 400px;
+
+
+
+.wrapper h2 {
+    font-size: 40px;
     text-align: center;
+    font-weight: 200;
+    color: #fff;
+    padding-top: 60px;
 }
+
 .container h2 {
     font-size: 40px;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-put;
+    text-align: center;
     font-weight: 200;
+    color: #fff;
+    padding-top: 60px;
 }
+
+/*
+CSS FORMULAIRE DE CONTACT ET FORMULAIRE INSCRIPTION
+ */
 form {
-    padding: 20px 0;
+    padding: 100px 0;
     position: relative;
     z-index: 2;
 }
+
 form input {
     appearance: none;
     outline: 0;
@@ -119,34 +68,74 @@ form input {
     transition-duration: 0.25s;
     font-weight: 300;
 }
-form input:hover {
+
+* form input:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
+
 form input:focus {
     background-color: white;
     width: 300px;
-    color: #53e3a6;
+    color: #333333;
 }
+
+form textarea {
+    appearance: none;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 250px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    transition-duration: 0.25s;
+    font-weight: 300;
+}
+
+form textarea:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+form textarea:focus {
+    background-color: white;
+    width: 300px;
+    color: #333333;
+}
+
 form button {
     appearance: none;
     outline: 0;
     background-color: white;
     border: 0;
     padding: 10px 15px;
-    color: #53e3a6;
+    color: #333333;
     border-radius: 3px;
     width: 250px;
     cursor: pointer;
     font-size: 18px;
     transition-duration: 0.25s;
 }
+
 form button:hover {
     background-color: #f5f7f9;
 }
 
-.error {
+.backgroundForm  {
+    padding: 90px;
+    background-image: url("../img/imageHeader.jpg");
+    background-repeat: no-repeat;
+
+}
+
+.signMail{
     margin-bottom: 10px;
-    color: rgba(229, 0, 12, 0.8);
+}
+.signPass{
+    margin-bottom: 10px;
 }
 
 @-webkit-keyframes square {
@@ -157,6 +146,7 @@ form button:hover {
         transform: translateY(-700px) rotate(600deg);
     }
 }
+
 @keyframes square {
     0% {
         transform: translateY(0);
@@ -166,13 +156,13 @@ form button:hover {
     }
 }
 
-.signMail{
-    margin-bottom: 10px;
-}
-.signPass{
-    margin-bottom: 10px;
-}
-/* article.php */
+/**
+FIN CSS FORMULAIRES
+ */
+
+/**
+ARTICLES
+*/
 .wrap3{
     max-width: 1100px;
     width: 100%;
@@ -189,20 +179,20 @@ body{
     background: linear-gradient(to bottom right, #034ea2 0%, #4698a2 100%);
     padding-bottom: 30px;
 }
-h1{
+h1.titreArticle{
     font-size: 4.5em;
     text-align: center;
     color: white;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
-h2{
+h2.sousPartie{
     font-size: 2.2em;
     text-align: center;
     color: white;
     margin-bottom: 25px;
 
 }
-h3 {
+h3.titleBloc {
     font-size: 1.2em;
     text-align: left;
     margin-bottom: 10px;
@@ -235,7 +225,7 @@ h3 {
     border-radius: 10px;
     border-color: black;
     padding: 10px;
-    height: 160px;
+    height: 175px;
     overflow: hidden;
 }
 .blocB .bloc2{
@@ -247,7 +237,7 @@ h3 {
     border: solid;
     border-color: black;
     padding: 10px;
-    height: 150px;
+    height: 165px;
     overflow: hidden;
 }
 .blocB .bloc3{
@@ -259,7 +249,7 @@ h3 {
     border-radius: 10px;
     border-color: black;
     padding: 10px;
-    height: 145px;
+    height: 155px;
     overflow: hidden;
 }
 .blocC .bloc1{
@@ -274,18 +264,6 @@ h3 {
     min-height: 100px;
 
 }
-
-
-.sectionX h3, .sectionY h3, .sectionZ h3 {
-    font-size: 25px;
-    color: #034ea2;
-    text-align: justify;
-}
-.sectionX h3 .title2,
-
-.sectionX .para {
-    line-height: 25px;
-
 .title{
     text-decoration: none;
     color: #A1A1A1;
@@ -294,7 +272,6 @@ h3 {
 .para{
     text-decoration: none;
     color: black;
-
 }
 .italique{
     font-style: italic;
@@ -308,6 +285,16 @@ h3 .title:hover{
 .para:hover{
     color: brown;
 }
+
+
+/**
+FIN ARTICLES
+ */
+
+/**
+MEDIA RESPONSIVE
+ */
+
 @media screen and (max-width: 640px) {
     .blocA .bloc1 {
         width: 48%;
@@ -315,271 +302,10 @@ h3 .title:hover{
         margin-right: 1%;
         margin-left: 1%;
     }
-
-.sectionX, .sectionY, .sectionZ {
-    padding-left: 50px;
-}
-
-    .blocB .bloc2 {
+    .blocB .bloc2{
         width: 48%;
         margin-bottom: 30px;
         margin-right: 1%;
         margin-left: 1%;
-    }
-
-
-
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
-
-    header nav ul li a {
-        text-decoration: none;
-        color: #ffff;
-    }
-
-    header nav ul {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    header nav {
-        background-color: #333333;
-        padding: 20px;
-    }
-
-    .wrap {
-        width: 100%;
-        max-width: 960px;
-        margin: 0 auto;
-    }
-
-
-    h1 {
-        text-align: center;
-        color: #333333;
-        text-decoration: #034ea2;
-        font-size: 30px;
-        margin-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    h1 span {
-        color: #034ea2;
-    }
-
-    .page-slider .flexslider .slides .sliderz {
-        width: 50%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .middle {
-        text-align: center;
-
-    }
-
-
-    .middle .middle-text {
-        font-size: 20px;
-
-    }
-
-    .middle .middle-text .title-middle {
-        color: #034ea2;
-    }
-
-    .middle .middle-text .paragraph {
-        color: #333333;
-        border: solid;
-        border-radius: 30px;
-    }
-
-    .middle .middle-text span.line {
-        height: 10px;
-        width: 10px;
-        background: #333;
-        display: block;
-        margin: 0 auto;
-        border: solid;
-        border-radius: 30px;
-    }
-
-    .sectionX {
-        width: 33.333333333%;
-        float: left;
-        padding: 0 10px;
-        text-align: justify;
-        margin-bottom: 20px;
-
-    }
-
-    .sectionY {
-        width: 33.333333333%;
-        float: left;
-        padding: 0 10px;
-        text-align: justify;
-        margin-bottom: 20px;
-    }
-
-    .sectionZ {
-        width: 33.333333333%;
-        float: right;
-        padding: 0 10px;
-        text-align: justify;
-        margin-bottom: 20px;
-
-    }
-
-    .sectionX h3, .sectionY h3, .sectionZ h3 {
-        font-size: 35px;
-        color: #034ea2;
-        text-align: justify;
-    }
-
-    .sectionX .para {
-        line-height: 25px;
-    }
-
-    .sectionY .para {
-        line-height: 25px;
-    }
-
-    .sectionZ .para {
-        line-height: 25px;
-    }
-
-    .sectionX, .sectionY, .sectionZ {
-        padding-left: 50px;
-
-    }
-
-    .bottom-barz {
-        background: #333333;
-        padding: 20px 0 20px 0;
-    }
-
-    .bottom-barz .copyrights {
-        text-align: center;
-        color: #fff;
-    >>> >>> > origin /features/ accueil . inc . php
-    }
-
-    /** userpage **/
-    #user-banner .user-text {
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,0a151c+100&0+0,1+100 */
-        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(10, 21, 28, 1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(10, 21, 28, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(10, 21, 28, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#0a151c', GradientType=1); /* IE6-9 */
-    }
-
-    #user-banner .user-text h2 {
-        font-family: 'open_sansbold';
-        color: #ffffff;
-        font-size: 40px;
-        text-transform: uppercase;
-        text-shadow: 1px 3px 1px #000000;
-    }
-
-    #user-banner .user-text p {
-        color: #fff;
-    }
-
-    #user-account-content {
-        padding: 25px 0px;
-    }
-
-    #user-account-content .list-group-item.disabled, #user-account-content .list-group-item.disabled:focus, #user-account-content .list-group-item.disabled:hover {
-        background-color: #e8206a;
-        color: #ffffff;
-        cursor: not-allowed;
-        font-size: 18px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    #user-account-content a.list-group-item {
-        transition: all 0.3s ease-out;
-    }
-
-    #user-account-content .list-group-item.active, #user-account-content .list-group-item.active:focus, #user-account-content .list-group-item.active:hover {
-        background: #009dbf none repeat scroll 0 0;
-        text-shadow: 0 -1px 0 #286090;
-        border: none;
-    }
-
-    #user-account-content a.list-group-item:focus, #user-account-content a.list-group-item:hover, #user-account-content button.list-group-item:focus, #user-account-content button.list-group-item:hover {
-        background-color: #f89921;
-        color: #fff;
-        text-decoration: none;
-        padding-left: 25px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-
-    .filterable .panel-heading .pull-right {
-        margin-top: -20px;
-    }
-
-    .filterable .filters input[disabled] {
-        background-color: transparent;
-        border: none;
-        cursor: auto;
-        box-shadow: none;
-        padding: 0;
-        height: auto;
-    }
-
-    .filterable .filters input[disabled]::-webkit-input-placeholder {
-        color: #333;
-    }
-
-    .filterable .filters input[disabled]::-moz-placeholder {
-        color: #333;
-    }
-
-    .filterable .filters input[disabled]:-ms-input-placeholder {
-        color: #333;
-    }
-
-    .panel-default > .panel-heading {
-        background-image: none;
-        background-color: #f5f5f5 !important;
-    }
-
-    .btn-success {
-        color: #fff;
-        background-image: none;
-        background-color: #5cb85c !important;
-        border-color: #4cae4c;
-        box-shadow: none;
-        text-shadow: none;
-    }
-
-    .btn-danger {
-        background-image: none;
-        background-color: #d9534f !important;
-        border-color: #d43f3a;
-        color: #fff;
-        box-shadow: none;
-        text-shadow: none;
-    }
-
-    .btn-pink {
-        background-color: #e8206a;
-        color: #ffffff;
-        text-shadow: none;
-        border-radius: 0px;
-    }
-
-    .btn-primary {
-        background-image: none;
-        background-color: #337ab7 !important;
-        border-color: #2e6da4;
-        color: #fff;
-        box-shadow: none;
-        text-shadow: none;
     }
 }
