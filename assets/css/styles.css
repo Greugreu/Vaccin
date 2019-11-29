@@ -8,30 +8,21 @@
     font-family: "Roboto Light", inherit, sans-serif, arial;
 }
 
-.backgroundForm  {
-    padding: 90px;
-    background-image: url("../img/imageHeader.jpg");
-    background-repeat: no-repeat;
-}
+
 
 img {
     width: 100%;
 }
 
 
-body ::placeholder {
 
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    opacity: 1;
-    font-weight: 300;
-}
-
-
-header nav ul li a {
-    text-decoration: none;
-    color: #ffff;
-}
+/*
+HEADER
+*/
+/*header nav ul li a {*/
+/*    text-decoration: none;*/
+/*    color: #ffff;*/
+/*}*/
 
 header nav ul {
     display: flex;
@@ -43,17 +34,17 @@ header nav {
     padding: 20px;
 }
 
-.wrap {
-    max-width: 1040px;
-    width: 100%;
-    margin: 0 auto;
-}
+/*.wrap {*/
+/*    max-width: 1040px;*/
+/*    width: 100%;*/
+/*    margin: 0 auto;*/
+/*}*/
 
-.wrap2 {
-    width: 100%;
-    max-width: 840px;
-    margin: 0 auto;
-}
+/*.wrap2 {*/
+/*    width: 100%;*/
+/*    max-width: 840px;*/
+/*    margin: 0 auto;*/
+/*}*/
 
 .wrapper {
     background: #50a3a2;
@@ -75,17 +66,10 @@ header nav {
     transform: translateY(85px);
 }
 
-/*.container {*/
-/*    max-width: 600px;*/
-/*    margin: 0 auto;*/
-/*    padding: 25px 0;*/
-/*    height: 400px;*/
-/*    text-align: center;*/
-/*}*/
+
 
 .wrapper h2 {
     font-size: 40px;
-    /*transition-duration: 1s;*/
     text-align: center;
     font-weight: 200;
     color: #fff;
@@ -94,14 +78,15 @@ header nav {
 
 .container h2 {
     font-size: 40px;
-    /*transition-duration: 1s;*/
     text-align: center;
     font-weight: 200;
     color: #fff;
     padding-top: 60px;
 }
 
-
+/*
+CSS FORMULAIRE DE CONTACT ET FORMULAIRE INSCRIPTION
+ */
 form {
     padding: 100px 0;
     position: relative;
@@ -178,6 +163,13 @@ form button {
 
 form button:hover {
     background-color: #f5f7f9;
+}
+
+.backgroundForm  {
+    padding: 90px;
+    background-image: url("../img/imageHeader.jpg");
+    background-repeat: no-repeat;
+
 }
 
 
