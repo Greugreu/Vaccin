@@ -1,3 +1,7 @@
+/**
+formulaire
+j'ai copier celui de victor + ajout de .signPass et .signMail margin bottom
+*/
 @import "reset.css";
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
@@ -159,7 +163,9 @@ form button:hover {
 .signPass{
     margin-bottom: 10px;
 }
-/* article.php */
+/* article.php
+tout est a prendre
+*/
 .wrap3{
     max-width: 1100px;
     width: 100%;
@@ -176,20 +182,20 @@ body{
     background: linear-gradient(to bottom right, #034ea2 0%, #4698a2 100%);
     padding-bottom: 30px;
 }
-h1{
+h1.titreArticle{
     font-size: 4.5em;
     text-align: center;
     color: white;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
-h2{
+h2.sousPartie{
     font-size: 2.2em;
     text-align: center;
     color: white;
     margin-bottom: 25px;
 
 }
-h3 {
+h3.titleBloc {
     font-size: 1.2em;
     text-align: left;
     margin-bottom: 10px;
@@ -222,7 +228,7 @@ h3 {
     border-radius: 10px;
     border-color: black;
     padding: 10px;
-    height: 160px;
+    height: 175px;
     overflow: hidden;
 }
 .blocB .bloc2{
@@ -234,7 +240,7 @@ h3 {
     border: solid;
     border-color: black;
     padding: 10px;
-    height: 150px;
+    height: 165px;
     overflow: hidden;
 }
 .blocB .bloc3{
@@ -246,7 +252,7 @@ h3 {
     border-radius: 10px;
     border-color: black;
     padding: 10px;
-    height: 145px;
+    height: 155px;
     overflow: hidden;
 }
 .blocC .bloc1{
