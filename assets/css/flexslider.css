@@ -215,10 +215,7 @@ html[xmlns] .slides {
     opacity: 1;
 }
 
-.flex-control-thumbs .flex-active {
-    opacity: 1;
-    cursor: default;
-}
+
 
 @media screen and (max-width: 860px) {
     .flex-direction-nav .flex-prev {
