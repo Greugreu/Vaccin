@@ -6,7 +6,7 @@
     <link href="./assets/css/styles.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body class="b">
+<body>
 <header class="h">
 
     <nav class="navigation">

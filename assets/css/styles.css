@@ -1,10 +1,20 @@
 @import "reset.css";
 @import "flexslider.css";
-
-.b {
-    font-family: 'Roboto', sans-serif;
+/* Wrap de la homePage*/
+.wrap {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
 }
 
+/* Début home page */
+/* Ecriture en roboto dans le body*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* Fin de la police roboto */
+/* début barre de navigation   */
 .h .navigation ul li a {
     text-decoration: none;
     color: #ffff;
@@ -19,20 +29,16 @@
     background-color: #333333;
     padding: 20px;
 }
-
-.wrap {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
+/* Fin de la barre de navigation */
+/* Flexslider */
 .page-slider .flexslider .slides .sliderz {
     width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
+/* Fin du flexslider */
+/* Section du milieu */
 .middle {
     text-align: center;
 
@@ -63,7 +69,8 @@
     border: solid;
     border-radius: 30px;
 }
-
+/* Fin de la section du milieu */
+/* Sections textuelles au milieu */
 .sectionX {
     width: 33.333333333%;
     float: left;
@@ -108,11 +115,11 @@
 .sectionZ .para {
     line-height: 25px;
 }
-
 .sectionX, .sectionY, .sectionZ {
     padding-left: 50px;
 }
-
+/* Fin de la section textuelle*/
+/* Barre des copyrights */
 .bottom-barz {
     background: #333333;
     padding: 20px 0 20px 0;
@@ -122,3 +129,4 @@
     text-align: center;
     color: #fff;
 }
+/*Fin barre copyrights*/

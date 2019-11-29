@@ -57,9 +57,9 @@ include('includes/header.php');
             <div class="titre2"></div>
             <h3 class="title3">VaccinFactory</h3>
             <p class="para">
-                Vous avez perdu votre carnet de santé? Pas de panique !<br>
+                Vous avez perdu votre carnet de santé? <br>
                 Grâce aux informations apportées après votre inscription,<br>
-                votre médecin traitant aura accès à ces dernières afin de répondre au mieux à vos besoins.<br>
+                votre médecin traitant aura accès à ces dernières afin de répondre à vos besoins.<br>
                 Ne vous en faites pas, vos données sont 100% sécurisées et protégées. <br>
                 Vous pouvez faire confiance en notre entreprise 100% Normande.
             </p>
