@@ -1,15 +1,22 @@
+$(window).load(function() {
+    $('.page-flexslider').flexslider({
+        animation: "slide",
+        directionNav: false,
+    });
+
+    $('.blog-flexslider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        slideshow: true,
+    });
+});
+
 $("#signButton").click(function(event){
     event.preventDefault();
 
     $('form').fadeOut(500);
     $('.wrapper').addClass('form-success');
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-© 2019 GitHub, Inc.
-=======
->>>>>>> origin/feature/account
-=======
 
 /* userpage */
 
@@ -208,4 +215,3 @@ $(document).ready(function(){
         }
     });
 });
->>>>>>> feature/account

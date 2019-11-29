@@ -1,9 +1,10 @@
 <?php
 session_start();
-include 'includes/compte.inc.php';
+
 include 'includes/header.php';
 include 'includes/pdo.php';
 include 'functions/functions.php';
+
 $session = $_SESSION['id'];
 $sql = "SELECT * FROM user WHERE id='$session'";
 $query = $pdo->query($sql);
@@ -14,13 +15,17 @@ if (empty($data[0]['usernom'])) {
     header('location:infos.php');
 }
 
-$sql = "SELECT *
+/*$sql = "SELECT *
         FROM uservac
         JOIN user ON user.id = uservac.userid
-        JOIN vaccin ON vaccin.id = uservac.idvaccin";
+        JOIN vaccin ON vaccin.id = uservac.idvaccin"; */
+
+
+$sql = "SELECT * FROM uservac WHERE userid = $session";
 $query = $pdo->prepare($sql);
 $query->execute();
 $tab = $query->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <section>
@@ -49,15 +54,22 @@ $tab = $query->fetchAll(PDO::FETCH_ASSOC);
                          echo   '<th>Numéro du lot</th>';
                          echo   '<th>Editer</th>';
 
-                            echo'</tr>';
-                            echo'</thead>';
-                            echo '<td>'.$tab[0]['idvaccin'].'</a></td>';
-                            echo '<td>'.$tab[0]['uservacname'].'</td>';
-                            echo '<td>'.$tab[0]['uservdate'].'</td>';
-                            echo '<td>'.$tab[0]['uservaclot'].'</td>';
-                            echo '<td>'.$tab[0]['userrenouv'].'</td>';
-                            echo '<button><a href="edit.php">Nouveau</a></button>';
-                        echo '</tr>';
+                         foreach($tab as $t){
+
+
+
+                             echo'</tr>';
+                             echo'</thead>';
+                             echo '<td>'.$t['idvaccin'].'</a></td>';
+                             echo '<td>'.$t['uservacname'].'</td>';
+                             echo '<td>'.$t['userdate'].'</td>';
+                             echo '<td>'.$t['uservaclot'].'</td>';
+                             echo '<td>'.$t['userrenouv'].'</td>';
+                            // echo '<button><a href="edit.php">Nouveau</a></button>';
+                             echo '</tr>';
+                         }
+
+
                           echo  '</tbody>';
                         echo'<tfoot>';
                         echo'<th>Id Vaccin</th>';

@@ -22,11 +22,10 @@
             <li><a href="login.php">Login</a></li>
             <li><a href="compte.php">Mon compte</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="login.php">Login</a></li>
             <li><a href="adminIndex.php">Admin</a></li>
             <li><a href="vaccin.php">Vaccin</a></li>
         </ul>
     </nav>
 
 </header>
-<main>
+

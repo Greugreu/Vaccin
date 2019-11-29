@@ -1,7 +1,7 @@
 <?php
 include 'includes/pdo.php';
 include 'functions/functions.php';
-include 'functions/queryPdo.php';
+
 include 'includes/header.php';
 
 //L'utilisateur renseigne son mail
